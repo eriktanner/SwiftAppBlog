@@ -12,11 +12,12 @@ description: Remake of popular game app, 2048
 
 
 image: /assets/images/markdown.jpg
-img2048square: /assets/images/official2048square.png
+img2048square: /assets/images/markdown.jpg
 
 ---
 
 ![Markdowm Image][img2048square/url]
+![Markdowm Image][image/url]
 
 
 ## Introduction:

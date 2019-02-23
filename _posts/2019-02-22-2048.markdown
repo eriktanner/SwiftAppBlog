@@ -14,7 +14,7 @@ description: Remake of popular game app, 2048
 
 ---
 
-![Markdowm Image][6]
+<img class="image" src="{{ site.url }}/{{ site.official2048square }}" alt="Alt Text">
 
 
 ## Introduction:

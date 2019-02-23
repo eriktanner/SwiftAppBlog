@@ -14,13 +14,13 @@ description: Remake of popular game app, 2048
 
 ---
 <div>
-    <img class="image" src="{{ site.url }}/{{ site.official2048square }}" alt="Alt Text">
+    <img class="image" src="{{ site.url }}/{{ site.official2048 }}" alt="Alt Text">
 </div>
 
 
 <div class="side-by-side">
     <div class="toleft">
-        <img class="image" src="{{ site.url }}/{{ site.official2048square }}" alt="Alt Text">
+        <img class="image" src="{{ site.url }}/{{ site.profile }}" alt="Alt Text">
         <figcaption class="caption">Photo by John Doe</figcaption>
     </div>
 

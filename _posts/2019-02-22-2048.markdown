@@ -14,8 +14,10 @@ description: Remake of popular game app, 2048
 
 ---
 
-    ![Markdowm Image][7]
-   ![Markdowm Image][6]
+![Markdowm Image][7]
+![Markdowm Image][6]
+![Markdowm Image][8]
+![Markdowm Image][9]
 
 
 ## Introduction:
@@ -201,3 +203,5 @@ Do you want some videos? Youtube, Vimeo or Vevo? Copy the embed code and paste o
 [6]: http://kune.fr/wp-content/uploads/2013/10/ghost-blog.jpg
 
 [7]: https://eriktanner.github.io/SwiftAppBlog/assets/images/official2048square.png
+[8]: https://eriktanner.github.io/SwiftAppBlog/assets/images/profile.jpg
+[9]: https://eriktanner.github.io/SwiftAppBlog/assets/images/official2048.jpg

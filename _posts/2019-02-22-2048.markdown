@@ -14,7 +14,7 @@ description: Remake of popular game app, 2048
 
 ---
 
-![Markdowm Image][{ site.url }/{ site.picture }]
+![Markdowm Image][6]
 
 
 ## Introduction:

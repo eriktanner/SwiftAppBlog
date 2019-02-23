@@ -25,7 +25,7 @@ description: Remake of popular game app, 2048
 The first class project for CMSC436 was to recreate the popular mobile game 2048, a game compared to the popular mobile game Flappy Bird for its virality. The game is played on a 4x4 grid with every turn resulting in a new 2 or 4 tile to be created on random blank tile. The game is played by collasping rows or columns of tiles together in a direction, combining like values. The goal is to reach the 2048 tile before the board fills up and can no longer be collasped.
 
 #### Especial Elements
-- [Specification](#specification)
+- [Specification](#specification:)
 - [Side-by-Side](#side-by-side)
 - [Star](#star)
 - [Especial Breaker](#especial-breaker)
@@ -39,10 +39,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 
 ---
 
-## Specification
-
-{: style="text-align:center"}
-![Markdowm Image][8]
+## Specification:
 
 The specification we were to abide by is as follows:
 ### View Details

@@ -13,9 +13,9 @@ description: Remake of popular game app, 2048
 
 
 ---
-{% highlight raw %}
-![Markdowm Image][/assets/images/official2048square.jpg]
-{% endhighlight %}
+
+![Markdowm Image][image/assets/images/official2048square.jpg]
+
 
 ## Introduction:
 

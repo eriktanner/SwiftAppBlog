@@ -60,9 +60,10 @@ The specification we were to abide by is as follows:
 * getState() -> [Int]: returns current state of the array
 * spawn(): creates a new minimum value ('1', displayed as 2^1) in a random blank square. 
 
-{% highlight raw %} 
+{: style="text-align:center"}
+![Markdowm Image][8]
 *Both the "Repeatable Switch" and "spawn()" were added/modified from the original 2048 game for grading purposes*
-{% endhighlight raw %}
+
 
 ---
 

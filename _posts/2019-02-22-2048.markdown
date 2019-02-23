@@ -19,21 +19,12 @@ description: Remake of popular game app, 2048
 ![Markdowm Image][7]
 ![Markdowm Image][6]
 
-<div id="container">
+
     
-    <img class="image" src="{{ site.url }}/{{ site.picture }}" alt="Alt Text">
-</div>
+    <center><img class="image" src="{{ site.url }}/{{ site.picture }}" alt="Alt Text"></center>
 
 
-#container {
-    height:100px;
-    line-height:100px;
-}
 
-#container img {
-    vertical-align:middle;
-    max-height:100%;
-}
 
 
 ## Introduction:

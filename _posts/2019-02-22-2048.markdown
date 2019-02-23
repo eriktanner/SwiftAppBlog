@@ -15,15 +15,8 @@ description: Remake of popular game app, 2048
 ---
 
 
-{:.mycenter}
+{: style="text-align:center"}
 ![Markdowm Image][7]
-
-
-<style>
-    .center {
-        text-align:center;
-    }
-</style>
 
 
 

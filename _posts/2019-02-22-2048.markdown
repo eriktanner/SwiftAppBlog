@@ -14,7 +14,7 @@ description: Remake of popular game app, 2048
 
 ---
 
-<img class="image" src="{{ site.url }}/{{ site.official2048square }}" alt="Alt Text">
+<img class="image" src="{{ site.url }}/{{ site.james }}" alt="Alt Text">
 
 
 ## Introduction:

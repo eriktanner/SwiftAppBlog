@@ -57,6 +57,7 @@ The specification we were to abide by is as follows:
 * getState() -> [Int]: returns current state of the array
 * spawn(): creates a new minimum value ('1', displayed as 2^1) in a random blank square. 
 
+
 {: style="text-align:center"}
 ![Markdowm Image][8]
 

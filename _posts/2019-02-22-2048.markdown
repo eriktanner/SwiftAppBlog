@@ -2,6 +2,7 @@
 title: "Remaking 2048"
 layout: post
 date: 2019-02-22 22:48
+image: /assets/images/markdown.jpg
 headerImage: false
 tag:
 - class project
@@ -11,13 +12,9 @@ author: Erik Fok
 description: Remake of popular game app, 2048
 
 
-image: /assets/images/markdown.jpg
-img2048square: /assets/images/markdown.jpg
-
 ---
 
-![Markdowm Image][img2048square/url]
-![Markdowm Image][image/url]
+![Markdowm Image][{{ site.url }}/{{ site.picture }}]
 
 
 ## Introduction:

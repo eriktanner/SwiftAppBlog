@@ -40,10 +40,11 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 ---
 
 ## Specification
-{: style="text-align:center"}
-![Markdowm Image][7]
 
-The specification for our project is as follows:
+{: style="text-align:center"}
+![Markdowm Image][8]
+
+The specification we were to abide by is as follows:
 ### View Details
 1. A vertical stack-view consiting of 4 horizontal stack-views
 2. 4 Arrow Buttons
@@ -54,13 +55,14 @@ The specification for our project is as follows:
 1. Create a class game2048 in the model class
 2. Represent the board as a one dimensional Int array
 
-
 #### Model Methods
 * left(), right(), up(), down(), which collaspe the board
 * getState() -> [Int]: returns current state of the array
 * spawn(): creates a new minimum value ('1', displayed as 2^1) in a random blank square. 
 
+{% highlight raw %} 
 *Both the "Repeatable Switch" and "spawn()" were added/modified from the original 2048 game for grading purposes*
+{% endhighlight raw %}
 
 ---
 

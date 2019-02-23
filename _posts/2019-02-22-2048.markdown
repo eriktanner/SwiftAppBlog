@@ -14,10 +14,14 @@ description: Remake of popular game app, 2048
 
 ---
 
+
+.center {
+  text-align: center;
+}
+
+{:.center}
 ![Markdowm Image][7]
 ![Markdowm Image][6]
-![Markdowm Image][8]
-![Markdowm Image][9]
 
 
 ## Introduction:

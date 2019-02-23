@@ -59,6 +59,7 @@ The specification we were to abide by is as follows:
 
 {: style="text-align:center"}
 ![Markdowm Image][8]
+
 *Both the "Repeatable Switch" and "spawn()" were added/modified from the original 2048 game for grading purposes*
 
 

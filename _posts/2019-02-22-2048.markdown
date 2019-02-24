@@ -60,8 +60,6 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 
 ## My Project
 
-<br>
-
 {: style="text-align:center"}
 ![Markdowm Image][9]
 

@@ -56,10 +56,16 @@ The specification we were to abide by is as follows:
 {: style="text-align:center"}
 ![Markdowm Image][8]
 
-*Both the "Repeatable Switch" and "spawn()" were added/modified from the original 2048 game for grading purposes*
+*Both the "Repeatable Switch" and "spawn()" were added/modified from the original 2048 game*
 
 
 ---
+
+## My Project
+
+{: style="text-align:center"}
+![Markdowm Image][9]
+
 
 ## Side-by-side
 
@@ -68,13 +74,7 @@ Like the [Medium](https://medium.com/) component.
 **Image** on the left and **Text** on the right:
 
 
-<style>
-    pre {
-      white-space: pre !important;
-      overflow-y: scroll !important;
-      height: 50vh !important;
-    }
-</style>
+
 <div class="side-by-side">
     <div class="toleft">
 
@@ -99,29 +99,23 @@ class GridButton : UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        
         self.layer.borderWidth = 4
         self.layer.cornerRadius = BUTTON_ROUNDNESS
         self.layer.borderColor = MyColors.grayBorder.cgColor
         addShadow(view: self)
         
         label = UILabel()
-        
         label.translatesAutoresizingMaskIntoConstraints = false
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.textAlignment = .center
-        
         label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        
         
         addSubview(label)
         label.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         label.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        
     }
     
     func getValue() -> Int {
@@ -141,9 +135,9 @@ class GridButton : UIView {
         } else {
             label.textColor = .white
         }
-        
     }
 }
+
 {% endhighlight %}
 
 
@@ -294,3 +288,4 @@ Do you want some videos? Youtube, Vimeo or Vevo? Copy the embed code and paste o
 
 [7]: https://eriktanner.github.io/SwiftAppBlog/assets/images/official2048square.png
 [8]: https://eriktanner.github.io/SwiftAppBlog/assets/images/spec2048.jpg
+[9]: https://eriktanner.github.io/SwiftAppBlog/assets/images/my2048.png

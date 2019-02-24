@@ -69,12 +69,12 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 
 ### Grid Button
 
-<div class="side-by-side">
+<div class="side-by-side" style="margin-top: 0px;">
     <div class="toleft" style="text-align:center">
         <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/white2048button4.png" alt="Alt Text">
     </div>
 
-    <div class="toright" style="padding-top: 10px;">
+    <div class="toright" style="padding-top: 12px;">
         <p> To fill out the grid, I decided to create a custom type, GridButton, which derives from UIView, a type which holds transform information and has properties such as background color. GridButton is a UIView with a Label centered, and functions which calculate it's backend value and update its display when the board is collasped.</p>
     </div>
 </div>

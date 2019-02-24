@@ -51,7 +51,7 @@ The specification we were to abide by is as follows:
 * getState() -> [Int]: returns current state of the array
 * spawn(): creates a new minimum value ('1', displayed as 2^1) in a random blank square. 
 
-
+<br>
 
 {: style="text-align:center"}
 ![Markdowm Image][8]
@@ -67,9 +67,6 @@ Like the [Medium](https://medium.com/) component.
 
 **Image** on the left and **Text** on the right:
 
-```swift
-
-```
 
 <style>
     pre {
@@ -80,10 +77,10 @@ Like the [Medium](https://medium.com/) component.
 </style>
 <div class="side-by-side">
     <div class="toleft">
-        ```{pre}
+        ```{: style="white-space: pre !important; overflow-y: scroll !important; height: 50vh !important;"}
             ```swift
                 class game2048 {
-                
+
             }
             ```
         ```

@@ -14,7 +14,7 @@ description: Remake of popular game app, 2048
 
 ---
 
-<div style="background-color:rgb(251, 248, 240);">
+<body style="background-color:rgb(251, 248, 240);">
 
 
 
@@ -263,7 +263,7 @@ Do you want some videos? Youtube, Vimeo or Vevo? Copy the embed code and paste o
 
 <iframe width="560" height="310" src="https://www.youtube.com/embed/r7XhWUDj-Ts" frameborder="0" allowfullscreen></iframe>
 
-</div>
+</body>
 
 [1]: http://daringfireball.net/projects/markdown/
 [2]: http://www.fileformat.info/info/unicode/char/2163/index.htm

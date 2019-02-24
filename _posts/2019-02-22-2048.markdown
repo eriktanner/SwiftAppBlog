@@ -79,9 +79,61 @@ Like the [Medium](https://medium.com/) component.
     <div class="toleft">
         ```{: style="white-space: pre !important; overflow-y: scroll !important; height: 50vh !important;"}
             {% highlight swift %}
-                class game2048 {
-
-            }
+             class GridButton : UIView {
+    
+                var label : UILabel!
+                
+                override init(frame: CGRect) {
+                    super.init(frame: frame)
+                }
+                
+                required init?(coder aDecoder: NSCoder) {
+                    super.init(coder: aDecoder)
+                    
+                    
+                    self.layer.borderWidth = 4
+                    self.layer.cornerRadius = BUTTON_ROUNDNESS
+                    self.layer.borderColor = MyColors.grayBorder().cgColor
+                    addShadow(view: self)
+                    
+                    label = UILabel()
+                    
+                    label.translatesAutoresizingMaskIntoConstraints = false
+                    label.lineBreakMode = .byWordWrapping
+                    label.numberOfLines = 0
+                    label.textAlignment = .center
+                    
+                    label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+                    
+                    
+                    addSubview(label)
+                    label.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+                    label.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+                    label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+                    label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+                    
+                }
+                
+                func getValue() -> Int {
+                    return Int(sqrt(Double(label.text ?? "") ?? 0))
+                }
+                
+                func updateTile(val: Int) {
+                    if(val == 0) {
+                        label.text = ""
+                    } else {
+                        label.text = String(2 << (val - 1))
+                    }
+                    
+                    self.backgroundColor = MyColors.numToBackground[val]
+                    if (val <= 2) {
+                        label.textColor = MyColors.grayText()
+                    } else {
+                        label.textColor = .white
+                    }
+                    
+                }
+            }   
             {% endhighlight %}
         ```
 

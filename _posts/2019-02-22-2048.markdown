@@ -34,7 +34,6 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 
 ## Specification
 
-The specification we were to abide by is as follows:
 ### View Details
 1. A vertical stack-view consiting of 4 horizontal stack-views
 2. 4 Arrow Buttons

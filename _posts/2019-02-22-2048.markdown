@@ -14,7 +14,7 @@ description: Remake of popular game app, 2048
 
 ---
 
-<div style="background-color:background-color:rgb(251, 248, 240);">
+<div style="background-color:rgb(251, 248, 240);">
 
 
 

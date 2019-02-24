@@ -274,4 +274,4 @@ Do you want some videos? Youtube, Vimeo or Vevo? Copy the embed code and paste o
 [7]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/official2048square.png
 [8]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/spec2048.jpg
 [9]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/my2048.png
-[10]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/gridButton.png
+[10]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/gridbutton.png

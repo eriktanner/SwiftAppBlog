@@ -83,7 +83,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     </div>
 </div>
 
-<div style="max-height: 400px !important; overflow-y: auto !important;">
+<div style="max-height: 400px !important; overflow-y: auto !important; background-color:rgb(251, 248, 240);">
 {% highlight swift %}
 class GridButton : UIView {
     

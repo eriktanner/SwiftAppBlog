@@ -69,7 +69,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 
 ### Grid Button
 
-<div class="side-by-side" style="margin-top: 0px;">
+<div class="side-by-side" style="margin-top: 0px; margin-bottom: 0px;">
     <div class="toleft" style="text-align:center">
         <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/white2048button4.png" alt="Alt Text">
     </div>

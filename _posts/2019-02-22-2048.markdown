@@ -75,7 +75,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 <div class="side-by-side">
     <div class="toleft" style="text-align:center">
         <br>
-        <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/white2048button.png" alt="Alt Text">
+        <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/white2048button4.png" alt="Alt Text">
     </div>
 
     <div class="toright">

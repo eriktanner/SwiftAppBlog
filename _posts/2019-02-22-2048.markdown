@@ -88,6 +88,7 @@ Like the [Medium](https://medium.com/) component.
     </div>
 </div>
 
+<div style="max-height: 200px !important; overflow-y: auto !important;">
 {% highlight swift %}
 class GridButton : UIView {
     
@@ -137,8 +138,8 @@ class GridButton : UIView {
         }
     }
 }
-
 {% endhighlight %}
+</div>
 
 
 {% highlight html %}

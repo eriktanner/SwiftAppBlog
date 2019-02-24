@@ -77,6 +77,17 @@ Like the [Medium](https://medium.com/) component.
 </style>
 <div class="side-by-side">
     <div class="toleft">
+
+       
+
+
+    </div>
+
+    <div class="toright">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</div>
+
 {% highlight swift %}
 class GridButton : UIView {
     
@@ -92,7 +103,7 @@ class GridButton : UIView {
         
         self.layer.borderWidth = 4
         self.layer.cornerRadius = BUTTON_ROUNDNESS
-        self.layer.borderColor = MyColors.grayBorder().cgColor
+        self.layer.borderColor = MyColors.grayBorder.cgColor
         addShadow(view: self)
         
         label = UILabel()
@@ -126,7 +137,7 @@ class GridButton : UIView {
         
         self.backgroundColor = MyColors.numToBackground[val]
         if (val <= 2) {
-            label.textColor = MyColors.grayText()
+            label.textColor = MyColors.grayText
         } else {
             label.textColor = .white
         }
@@ -134,15 +145,6 @@ class GridButton : UIView {
     }
 }
 {% endhighlight %}
-       
-
-
-    </div>
-
-    <div class="toright">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-</div>
 
 
 {% highlight html %}

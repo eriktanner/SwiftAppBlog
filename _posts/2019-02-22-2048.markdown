@@ -63,6 +63,8 @@ The specification we were to abide by is as follows:
 
 ## My Project
 
+<br>
+
 {: style="text-align:center"}
 ![Markdowm Image][9]
 
@@ -88,7 +90,7 @@ Like the [Medium](https://medium.com/) component.
     </div>
 </div>
 
-<div style="max-height: 200px !important; overflow-y: auto !important;">
+<div style="max-height: 400px !important; overflow-y: auto !important;">
 {% highlight swift %}
 class GridButton : UIView {
     
@@ -140,6 +142,7 @@ class GridButton : UIView {
 }
 {% endhighlight %}
 </div>
+<br>
 
 
 {% highlight html %}

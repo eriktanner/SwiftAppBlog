@@ -78,11 +78,11 @@ Like the [Medium](https://medium.com/) component.
 <div class="side-by-side">
     <div class="toleft">
         ```{: style="white-space: pre !important; overflow-y: scroll !important; height: 50vh !important;"}
-            ```swift
+            {% highlight swift %}
                 class game2048 {
 
             }
-            ```
+            {% endhighlight %}
         ```
 
 

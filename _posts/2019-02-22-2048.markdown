@@ -69,19 +69,8 @@ The specification we were to abide by is as follows:
 ![Markdowm Image][9]
 
 
-## Side-by-side
-
-Like the [Medium](https://medium.com/) component.
-
-**Image** on the left and **Text** on the right:
-
-
-
 <div class="side-by-side">
     <div class="toleft">
-
-       
-
 
     </div>
 

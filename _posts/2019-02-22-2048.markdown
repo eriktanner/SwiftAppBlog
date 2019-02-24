@@ -14,11 +14,6 @@ description: Remake of popular game app, 2048
 
 ---
 
-<body style="background-color:rgb(251, 248, 240);">
-
-
-
-
 {: style="text-align:center"}
 ![Markdowm Image][7]
 
@@ -83,7 +78,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     </div>
 </div>
 
-<div style="max-height: 400px !important; overflow-y: auto !important; background-color:rgb(251, 248, 240);">
+<div style="max-height: 400px !important; overflow-y: auto !important;">
 {% highlight swift %}
 class GridButton : UIView {
     
@@ -263,7 +258,6 @@ Do you want some videos? Youtube, Vimeo or Vevo? Copy the embed code and paste o
 
 <iframe width="560" height="310" src="https://www.youtube.com/embed/r7XhWUDj-Ts" frameborder="0" allowfullscreen></iframe>
 
-</body>
 
 [1]: http://daringfireball.net/projects/markdown/
 [2]: http://www.fileformat.info/info/unicode/char/2163/index.htm

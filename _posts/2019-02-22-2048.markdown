@@ -62,7 +62,7 @@ The specification we were to abide by is as follows:
 ---
 
 ## My Project
-<br>
+
 {: style="text-align:center"}
 ![Markdowm Image][9]
 

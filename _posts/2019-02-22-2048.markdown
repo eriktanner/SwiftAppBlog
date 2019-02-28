@@ -129,6 +129,92 @@ class GridButton : UIView {
 </div>
 <br>
 
+### Arrow Button
+
+<div class="side-by-side" style="margin-top: 0px; margin-bottom: 0px;">
+    <div class="toleft" style="text-align:center">
+        <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/white2048arrow.png" alt="Alt Text">
+    </div>
+
+    <div class="toright" style="padding-top: 12px;">
+        <p> To control the board, I decided to create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButton is a UIButton with an UIImageView centered, and a function which handles the direction the board collaspes on a touch event.</p>
+    </div>
+</div>
+
+<div style="max-height: 400px !important; overflow-y: auto !important;">
+{% highlight swift %}
+class ArrowButton : UIButton {
+    
+    weak var delegate: ArrowDelegate?
+    
+    var arrowImage : UIImageView!
+    var direction : String?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.layer.cornerRadius = BUTTON_ROUNDNESS
+        self.backgroundColor = MyColors.grayBorder
+        addShadow(view: self)
+        
+        arrowImage = UIImageView()
+        arrowImage.image = UIImage(named: "keyboard-right-arrow-button")
+        arrowImage.alpha = 0.5
+        arrowImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(arrowImage)
+        arrowImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6).isActive = true
+        arrowImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6).isActive = true
+        arrowImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        arrowImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    }
+    
+    func setupArrow(arrowDelegate: ArrowDelegate, dir: String, button: ArrowButton) {
+        delegate = arrowDelegate
+        self.direction = dir
+        
+        switch (dir) {
+        case "left":
+            self.arrowImage.transform = self.transform.rotated(by: CGFloat(Double.pi))
+            break
+        case "up":
+            self.arrowImage.transform = self.transform.rotated(by: CGFloat(Double.pi * 3/2))
+            break
+        case "down":
+            self.arrowImage.transform = self.transform.rotated(by: CGFloat(Double.pi / 2))
+            break
+        default:
+            break
+        }
+        
+        button.addTarget(self, action: #selector(arrowClicked), for: .touchUpInside)
+    }
+    
+    @objc func arrowClicked(_ sender: ArrowButton) {
+        switch (self.direction) {
+        case "left":
+            delegate?.leftClick()
+            break
+        case "right":
+            delegate?.rightClick()
+            break
+        case "up":
+            delegate?.upClick()
+            break
+        case "down":
+            delegate?.downClick()
+            break
+        default:
+            break
+        }
+    }
+{% endhighlight %}
+</div>
+<br>
+
 
 <div class="side-by-side">
     <div class="toleft">

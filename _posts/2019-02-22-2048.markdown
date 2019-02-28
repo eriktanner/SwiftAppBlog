@@ -137,7 +137,7 @@ class GridButton : UIView {
     </div>
 
     <div class="toright" style="padding-top: 12px;">
-        <p> To control the board, I decided to create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButton is a UIButton with an UIImageView centered, and a function which handles the direction the board collaspes on a touch event.</p>
+        <p> To control the board, I decided to create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButton is a UIButton with an UIImageView centered, and functions which orient the arrow and handle the direction the board is collasped on touch events.</p>
     </div>
 </div>
 

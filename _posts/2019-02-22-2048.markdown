@@ -141,7 +141,7 @@ class GridButton : UIView {
     </div>
 </div>
 
-<div style="max-height: 325px !important; overflow-y: auto !important;">
+<div style="max-height: 325px !important; overflow-y: auto !important; margin-top: 4px; ">
 {% highlight swift %}
 class ArrowButton : UIButton {
     

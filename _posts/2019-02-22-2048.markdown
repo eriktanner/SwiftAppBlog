@@ -71,7 +71,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     </div>
 
     <div class="toright" style="padding-top: 12px;">
-        <p> To fill out the grid, I decided to create a custom type, GridButton, which derives from UIView, a type which holds transform information and has properties such as background color. GridButton is a UIView with a Label centered, and functions which calculate it's backend value and update its display when the board is collasped.</p>
+        <p> To fill out the grid, I decided to create a custom type, GridButton, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridButton is a UIView with a Label centered, and functions which calculate it's backend value and update its display when the board is collasped.</p>
     </div>
 </div>
 

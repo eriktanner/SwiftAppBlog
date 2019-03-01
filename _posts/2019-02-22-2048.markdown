@@ -58,7 +58,9 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 
 ---
 
-# My Project
+# Building 2048
+
+<br>
 
 {: style="text-align:center"}
 ![Markdowm Image][10]
@@ -177,7 +179,7 @@ class ArrowButton : UIButton {
 #### Rotating ArrowButtons
 
 <div class="side-by-side" style="margin-top: 0px; margin-bottom: 0px;">
-    <div class="toleft" style="margin-top: 20px; text-align:right;">
+    <div class="toleft" style="margin-top: 25px; text-align:right;">
         <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/IBInspectableRotation.png" alt="Alt Text">
     </div>
 

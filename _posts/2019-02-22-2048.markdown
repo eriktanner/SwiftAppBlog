@@ -89,12 +89,12 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     </div>
 
     <div class="toright" style="margin-bottom: 0px; padding-bottom: 0px">
-        <p> In order for Swift to be able to confidently position an object on screen, across all devices, it must know its height, width, and position. Swift where to place an object based on relationships, named constraints, originating from known anchor points and properties of each individual device. The anchor points include the leading, top, bottom, and trailing anchors, which are the edges of the screen. The properties include the height, width, vertical center, and horizontal center of the device. Although constraints originate from properties of the screen, subsequential constraints can be define based on other constraint-defined objects. </p>
+        <p> In order for Swift to be able to confidently position an object on screen, across all devices, it must know its height, width, and position. Swift knows where to place an object based on relationships, named constraints, originating from known anchor points and properties of each individual device. The anchor points include the leading, top, bottom, and trailing anchors, which are the edges of the screen. The properties include the height, width, vertical center, and horizontal center of the device. Although constraints originate from properties of the screen, subsequential constraints can be define based on other constraint-defined objects. </p>
     </div>
 </div>
 
 <div style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px">
-    <p> The example above shows our grid constraints. Using these constraints, we are able to tell Swift where to position our grid at what height and what width. We tell swift to attach our grid's leading, top, and right anchors to the leading, top, and right anchors of our device's screen. Using this information, Swift is able to determine our grid's width. Knowing the width of our grid, we can determine our grid's height by setting an Aspect Ratio constraint with a ratio of 1:1, telling Swift we want our height to be equal our width. Knowing where to anchor our grid, and what it's dimensions are, Swift is able to determine where to place our grid on our device. </p>
+    <p> The example above shows our grid constraints. Using these constraints, we are able to tell Swift where to position our grid at what height and what width. We tell swift to attach our grid's leading, top, and right anchors to the leading, top, and right anchors of our device's screen and to add 20 pixels of padding. Using this information, Swift is able to determine our grid's width. Knowing the width of our grid, we can determine our grid's height by setting an Aspect Ratio constraint with a ratio of 1:1, telling Swift we want our height to be equal our width. Knowing where to anchor our grid, and what it's dimensions are, Swift is able to determine where to place our grid on our device. </p>
 </div>
 
 ---
@@ -253,17 +253,17 @@ extension UIView {
 </div>
 
 <div style="margin-top: 10px;">
-    <p> To orient the arrows left, up, down, right, we create an extension of UIView and define a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow you to add functionality to existing classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's user interface library, UIView. This means the rotation method can now be applied to any UIView or any of its subtypes, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the Interface Builder.</p>
+    <p> To orient the arrows left, up, down, right, we create an extension of UIView and define a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow us to add functionality to existing classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's user interface library, UIView. This means the rotation method can now be applied to any UIView or any of its subtypes, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the Interface Builder.</p>
 </div>
 <br>
 
-### Controllers
+## Controllers
 
 <div>
     <p> Controllers handle the flow of data between two entities. In Swift, the most common controller is a view controller. The view controller connects the logic side of the application, the model, to the user interaction side of the application, the view. It is the binder of these two entities, in a common architectural pattern known as MVC, Model-View-Controller. </p>
 </div>
 
-## View Controller
+### View Controller
 
 Every storyboard is connected to a UIViewController. Using option click and drag, we are able to create @IBOutlets, connecting views from each storyboard to their view controllers. Here we set up references for views which we may choose to edit programatically, or for views which have impact the logic of our game. In this example, we create our model object, game, whose logic is affected when the board is collasped. To collaspe the board, we look for a touch event, seen in the @IBAction, arrowClicked, which is connected to the four arrow buttons via the storyboard. 
 

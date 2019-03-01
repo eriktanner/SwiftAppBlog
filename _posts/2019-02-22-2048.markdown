@@ -256,6 +256,7 @@ extension UIView {
 </div>
 
 ---
+<br>
 
 {: style="text-align:center"}
 ![Markdowm Image][14]
@@ -309,6 +310,7 @@ class ViewController: UIViewController {
 }
 {% endhighlight %}
 </div>
+
 ---
 <br>
 
@@ -519,7 +521,31 @@ Thoughout our game2048 class, yo may have noticed calls to something called a de
 
 ### Delegation
 
-Delegates 
+Delegates allow us to communicate from one object to another in a decoupled manner. Decoupled code is ideal for keeping our systems more independent, which makes our system as a whole more robust. Here we use delegates to communicate from our game2048 object, game, back to its owner, our view controller. Our game object does not know anything about the view controller, only that it adheres to a protocol, allowing us to set the view controller as its delegate. 
+
+<div style="max-height: 300px !important; overflow-y: auto !important;">
+{% highlight swift %}
+protocol game2048Delegate: class {
+    func initGrid()
+    func updateGrid(grid: [Int])
+}
+
+extension ViewController: game2048Delegate {
+
+    func updateGrid(grid: [Int]) {
+        for i in 0..<16 {
+            gridViews[i].updateTile(val: grid[i])
+        }
+    }
+    
+    func initGrid() {
+        for i in 0..<16 {
+            gridViews[i].updateTile(val: 0)
+        }
+    }
+}
+{% endhighlight %}
+</div>
 
 
 

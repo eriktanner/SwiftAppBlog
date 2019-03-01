@@ -509,9 +509,9 @@ extension Array {
 
 {% endhighlight %}
 </div>
-<br>
 
 ---
+<br>
 
 {: style="text-align:center"}
 ![Markdowm Image][16]

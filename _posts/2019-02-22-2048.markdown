@@ -425,7 +425,7 @@ class game2048 {
 
 
 And where's the number crunching? You may have noticed that our left, right, up, and down functions are calling functions not visible in our game2048 class. Our number crunching functionality was broken off from our game2048 and put into a class, Collapse, and in an extension of the Array class. This helps to keep our classes small, improving the readability, management, and usability of our code.
-Within Collapse, we are able to take 1-demensional arrays and collapse them, meaning like values within the array are combined if adjacent indices are of equal value. The reverse1d and transpose1d2 extensions allow us to shift around the boards values so that they may be used within the same collapse method to produce the desired result.
+Within Collapse, we are able to take 1-demensional arrays and collapse them, meaning like values within the array are combined if adjacent indices are of equal value. The reverse1d and transpose1d2 extensions allow us to shift around the boards values so that they may be used within the same collapse method to produce their desired result.
 
 <div style="max-height: 400px !important; overflow-y: auto !important;">
 {% highlight swift %}
@@ -517,11 +517,11 @@ extension Array {
 
 ### Communication is Key
 
-Thoughout our game2048 class, yo may have noticed calls to something called a delegate. When we talked about the view controller, we explained how it acts as the gateway between the communication of our two entities, our view and our model. When we created our view controller, we could see that our view controller holds references to both our view and our model, and so our view controller is unlimited in its communication to them. Our model, however, has no idea where it came from, it has no idea who created it. To establish this connection of communication from our model to our view controller, we use the design pattern called **delegation**. 
+Thoughout our game2048 class, you may have noticed calls to something called a delegate. When we talked about the view controller, we explained how it acts as the gateway between the communication of our two entities, our view and our model. When we created our view controller, we could see that our view controller holds references to both our view and our model, and so our view controller is unlimited in its communication to them. Our model, however, has no idea where it came from, it has no idea who created it. To establish this connection of communication from our model to our view controller, we use the design pattern called **delegation**. 
 
 ### Delegation
 
-Delegates allow us to communicate from one object to another in a decoupled manner. Decoupled code is ideal for keeping our systems more independent, which makes our system as a whole more robust. Here we use delegates to communicate from our game2048 object, game, back to its owner, our view controller. Our game object does not know anything about the view controller, only that it adheres to a protocol, allowing us to set the view controller as its delegate. 
+Delegates allow us to communicate from one object to another in a decoupled manner. Decoupled code is ideal for keeping our systems more independent, which makes our system as a whole more robust. Here we use delegates to communicate from our game2048 object, game, back to its owner, our view controller. Our game object does not know anything about our view controller, only that it adheres to a protocol, allowing us to set it as our game object's delegate. As our code runs in our game2048 class, it makes calls to its delegate, if the delegate is set, it runs the code defined by the delegate object. In our example, the code run when our game object makes calls its delegate is seen below making calls to GridView's updateTile from our view controller.
 
 <div style="max-height: 300px !important; overflow-y: auto !important;">
 {% highlight swift %}

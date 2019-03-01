@@ -350,14 +350,10 @@ class game2048 {
             rand = Int.random(in: 0..<16)
         }
             
-        nodes[rand] = twoOrFour()
+        nodes[rand] = Int.random(in: 0..<2)
         delegate?.updateGrid(grid: nodes)
     }
 
-    private func twoOrFour() -> Int {
-        return Int.random(in: 0..<2)
-    }
-    
     func collaspeInDirection(arrowIndex: Int?) {
         if let dir = arrowIndex {
             assert(dir >= 0 && dir < 4, "Invalid Collaspe Board Direction")
@@ -435,6 +431,7 @@ class Collapse {
     
     /* Removes zeros, does one time combining of consecutive equal values (pairs)
      so that the pair now equal a single value of the shared value + 1,
+     adds zeros to the end of the new arr so that its size equals the original size */
     static func collapse(arr: [Int]) -> [Int] {
         
         var collasped = arr.filter{$0 != 0}

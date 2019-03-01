@@ -77,7 +77,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 
 <br>
 
-#### Constraints
+### Constraints
 
 <div>
     <p> Constraints are essential to any well designed UI. With the multplicities of screen sizes ranging from iPads to iPhones, positioning objects on screen is not as simple as drag and drop. In other words, a well designed UI on an iPhone X has no guarantee of being well designed on a iPhone 6. What may be perfectly positioned object on an iPhone X could be cutoff on an iPhone 6. </p>
@@ -98,6 +98,10 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 </div>
 
 <div class="breaker"></div>
+
+{: style="text-align:center"}
+![Markdowm Image][12]
+
 
 ## Views
 
@@ -398,5 +402,6 @@ Do you want some videos? Youtube, Vimeo or Vevo? Copy the embed code and paste o
 [9]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/my2048.png
 [10]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/my2048sim.png
 [11]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/gridViewStoryBoard.png
+[12]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/threeBlocks.png
 
 

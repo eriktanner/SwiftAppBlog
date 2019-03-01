@@ -310,12 +310,15 @@ class ViewController: UIViewController {
 }
 {% endhighlight %}
 </div>
+---
 <br>
 
+{: style="text-align:center"}
+![Markdowm Image][15]
 
 ## Model
 
-Controllers handle the flow of data between entities. A controller transforms the output of one entity into the input that another entity can understand, much like your interaction with your remote or your keyboard. In Swift, the most common controller is a view controller. The view controller connects the user interaction side of the application, the view, to the logic side of the application, the model. We use it to translate communication between these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
+The model handles the logical backend of the application. A controller transforms the output of one entity into the input that another entity can understand, much like your interaction with your remote or your keyboard. In Swift, the most common controller is a view controller. The view controller connects the user interaction side of the application, the view, to the logic side of the application, the model. We use it to translate communication between these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
 
 
 ### game2048
@@ -572,5 +575,6 @@ Do you want some videos? Youtube, Vimeo or Vevo? Copy the embed code and paste o
 [12]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/threeBlocks.png
 [13]: https://www.raywenderlich.com/1073-model-view-controller-mvc-in-ios-a-modern-approach
 [14]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/blueController.png
+[15]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/logicGate.png
 
 

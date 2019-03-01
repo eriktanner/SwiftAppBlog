@@ -72,14 +72,14 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 ![Markdowm Image][11]
 
 <div style="margin-bottom: 0px;">
-    <p> Storyboards are tools which developers can use to visually map out their user interface design. Developers can drag a drop objects from the object library and place them on screen and in a heirarchy, organizing their construction. In this example, we use our storyboard to layout the foundation of what or app will look like visually and to initialize our relationships between objects.</p>
+    <p> Storyboards are tools which developers can use to visually map out their user interface design. Developers can drag a drop objects from the object library and place them on screen and in a heirarchy, organizing their construction. In this example, we use our storyboard to layout the foundation of what or app will look like visually and to initialize our relationships between objects. Shown above is our grid, which is composed of a vertical stack-view, containing 4 equally spaced horizontal stack-views, each filled with 4 Grid Views. </p>
 </div>
 <br>
 
 ### Constraints
 
 <div style="margin-bottom: 0px;">
-    <p> Constraints are essential to any well designed UI. With the multplicities of screen sizes ranging from iPads to iPhones, positioning objects on screen is not as simple as drag and drop. In other words, a well designed UI on an iPhone X has no guarantee of being well designed on a iPhone 6. What may be perfectly positioned object on an iPhone X, may be cutoff object on an iPhone 6. </p>
+    <p> Constraints are essential to any well designed UI. With the multplicities of screen sizes ranging from iPads to iPhones, positioning objects on screen is not as simple as drag and drop. In other words, a well designed UI on an iPhone X has no guarantee of being well designed on a iPhone 6. What may be perfectly positioned object on an iPhone X may be cutoff on an iPhone 6. </p>
 </div>
 
 <div class="side-by-side" style="margin-top: 8px; margin-bottom: 0px;">

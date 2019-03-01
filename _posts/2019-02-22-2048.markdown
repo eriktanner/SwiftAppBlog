@@ -60,14 +60,15 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 
 # Building 2048
 
-<br>
+<div style="margin-top: 5px; margin-bottom: 0px;">
+</div>
 
 {: style="text-align:center"}
 ![Markdowm Image][10]
 
 ## Views
 
-<div style="">
+<div style="margin-bottom: 5px;">
     <p> Views are visual building blocks of an app's user interface. They can be draw and organize the content of a user's screen, making them essential for any and every developer. They can also animate and respond to touch events, some of which will be described later in this article. </p>
 </div>
 <br>

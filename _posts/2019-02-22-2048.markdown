@@ -58,10 +58,17 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 
 ---
 
-## My Project
+# My Project
 
 {: style="text-align:center"}
 ![Markdowm Image][10]
+
+## Views
+
+<div style="">
+    <p> Views are visual building blocks of an app's user interface. They can be draw and organize the content of a user's screen, making them essential for any and every developer. They can also animate and respond to touch events, some of which will be described here. </p>
+</div>
+<br>
 
 ### Grid View
 
@@ -71,7 +78,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     </div>
 
     <div class="toright" style="padding-top: 12px;">
-        <p> To fill out the grid, I decided to create a custom type, GridView, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridButton is a UIView with a Label centered and a function which updates its display when the board is collasped.</p>
+        <p> To fill out the grid, we create a custom type, GridView, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridButton is a UIView with a Label centered and a function which updates its display when the board is collasped.</p>
     </div>
 </div>
 
@@ -131,7 +138,7 @@ class GridView : UIView {
     </div>
 
     <div class="toright" style="padding-top: 12px;">
-        <p> To control the board, I decided to create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButton is a UIButton with an UIImageView centered, and functions which orient the arrow and handle the direction the board is collasped on touch events.</p>
+        <p> To control the board, we create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButtons contain a centered UIImageView composed of an imported asset, an arrow image. Each ArrowButton is given a uniquely identified in the ViewController class, which is used to determine the direction in which the button collaspes the board</p>
     </div>
 </div>
 
@@ -205,9 +212,11 @@ extension UIView {
 </div>
 
 <div style="margin-top: 10px;">
-    <p> To orient the arrows left, up, down, right, I decided to create an extension of UIView and create a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow you to add functionality to existing classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's user interface library, UIView. This means the rotation method can now be applied to any UIView or any of its subtypes, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the StoryBoard.</p>
+    <p> To orient the arrows left, up, down, right, we create an extension of UIView and create a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow you to add functionality to existing classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's user interface library, UIView. This means the rotation method can now be applied to any UIView or any of its subtypes, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the StoryBoard.</p>
 </div>
 <br>
+
+### View Controller
 
 
 ### Model

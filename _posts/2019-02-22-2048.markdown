@@ -80,7 +80,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 ### Constraints
 
 <div>
-    <p> Constraints are essential to any well designed UI. With the multiplicities of screen sizes ranging from iPads to iPhones, positioning objects on screen is not as simple as drag and drop. In other words, a well designed UI on an iPhone X has no guarantee of being well designed on a iPhone 6. What may be perfectly positioned object on an iPhone X could be cutoff on an iPhone 6. </p>
+    <p> Constraints are essential to any well designed UI. With the multiplicities of screen sizes ranging from iPads to iPhones, positioning objects on screen is not as simple as drag and drop. In other words, a well designed UI on an iPhone X has no guarantee of being well designed on a iPhone 6. What may be perfectly positioned on an iPhone X could be cutoff on an iPhone 6. </p>
 </div>
 
 <div class="side-by-side" style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px">
@@ -94,7 +94,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 </div>
 
 <div style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px">
-    <p> The example above shows our grid constraints. Using these constraints, we are able to tell Swift where to position our grid at what height and what width. We tell swift to attach our grid's leading, top, and right anchors to the leading, top, and right anchors of our device's screen and to add 20 pixels of padding. Using this information, Swift is able to determine our grid's width. Knowing the width of our grid, we can determine our grid's height by setting an Aspect Ratio constraint with a ratio of 1:1, telling Swift we want our height to be equal our width. Knowing where to anchor our grid, and what it's dimensions are, Swift is able to determine where to place our grid on our device. </p>
+    <p> The example above shows our grid constraints. Using these constraints, we are able to tell Swift where to position our grid at what height and what width. We tell swift to attach our grid's leading, top, and right anchors to the leading, top, and right anchors of our device's screen and to add 20 pixels of padding. Using this information, Swift is able to determine our grid's width. Knowing the width of our grid, we can determine our grid's height by setting an Aspect Ratio constraint with a ratio of 1:1, telling Swift we want our height to be equal our width. Knowing where to anchor our grid, and what it's dimensions are, Swift is able to determine where to place our grid on our device and at what size. </p>
 </div>
 
 ---
@@ -252,7 +252,7 @@ extension UIView {
 </div>
 
 <div style="margin-top: 10px;">
-    <p> To orient the arrows left, up, down, right, we create an extension of UIView and define a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow us to add functionality to existing classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's user interface library, UIView. This means the rotation method can now be applied to any UIView or any of its subclasses, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the Interface Builder.</p>
+    <p> To orient the arrows left, up, down, right, we create an extension of UIView and define a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow us to add functionality to already defined classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's user interface library, UIView. This means the rotation method can now be applied to any UIView or any of its subclasses, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the Interface Builder.</p>
 </div>
 <br>
 

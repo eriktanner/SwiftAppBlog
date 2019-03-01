@@ -318,14 +318,14 @@ Controllers handle the flow of data between entities. A controller transforms th
 
 Every storyboard is connected to a UIViewController. Using option click and drag, we are able to create @IBOutlets, connecting views from each storyboard to their view controller. Here we set up references for views which we may choose to edit programatically, or for views which have impact on the logic of our game. In this example, we create our model object, game, whose logic is affected when the board is collasped. We collaspe the board once an arrow button registers a touchUpInside event, seen in the @IBAction, arrowClicked, which is connected to the four arrow buttons via the storyboard. 
 
-<div style="max-height: 450px !important; overflow-y: auto !important;">
+<div style="max-height: 500px !important; overflow-y: auto !important;">
 {% highlight swift %}
 class game2048 {
     
     private(set) var nodes : [Int]! //(Math) Power of every Tile 
     weak var delegate: game2048Delegate?
     
-    init(delegate: game2048Delegate?, repeatable: Bool) {
+    init(delegate: game2048Delegate?) {
         self.delegate = delegate
         nodes = [Int](repeating: 0, count: 16)
         startGame()

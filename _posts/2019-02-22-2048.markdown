@@ -88,12 +88,12 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
         <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/gridViewConstraints.png" alt="Alt Text">
     </div>
 
-    <div class="toright" style="margin-bottom: 0px;">
+    <div class="toright" style="margin-bottom: 0px; padding-bottom: 0px">
         <p> In order for Swift to be able to confidently position objects on screen, across all devices, it must know its height, width, and position. Constraits tell Swift where to place objects based on relationships, originating from known anchor points and properties of each individual device. These anchor points include the leading, top, bottom, and trailing anchors, the edges of the screen. These properties include the height, width, vertical center, and horizontal center of the device. Although constraints originate from properties of the screen, subsequential constraints can be define based on other constraint-defined objects. </p>
     </div>
 </div>
 
-<div style="margin-bottom: 0px; margin-top: 0px">
+<div style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px">
     <p> The example above shows our grid constraints. Using these constraints, we are able to tell Swift where to position our grid at what height and what width. We tell swift to attach our grid's leading, top, and right anchors to the leading, top, and right anchors of our device's screen. Using this information, we are able to determine our grid's width. Knowing the width of our grid, we can determine our grid's height by setting an Aspect Ratio constraint with a ratio of 1:1, telling Swift we want our width to equal our height. Knowing where to anchor our grid, and what it's dimensions are, Swift is able to determine where to place our grid on our device. </p>
 </div>
 

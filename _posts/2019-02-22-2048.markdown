@@ -304,7 +304,7 @@ class ViewController: UIViewController {
     
     @IBAction private func arrowClicked(_ sender: ArrowButton) {
         let arrowIndex = arrowButtons.firstIndex(of: sender)
-        game.collaspeOnButtonClick(arrowIndex: arrowIndex)
+        game.collaspeInDirection(arrowIndex: arrowIndex)
     }
 }
 {% endhighlight %}
@@ -322,7 +322,7 @@ The model handles the logical backend of the application. This side of the appli
 
 ### game2048
 
-Every storyboard is connected to a UIViewController. Using option click and drag, we are able to create @IBOutlets, connecting views from each storyboard to their view controller. Here we set up references for views which we may choose to edit programatically, or for views which have impact on the logic of our game. In this example, we create our model object, game, whose logic is affected when the board is collasped. We collaspe the board once an arrow button registers a touchUpInside event, seen in the @IBAction, arrowClicked, which is connected to the four arrow buttons via the storyboard. 
+What goes in the model of our game? The question can more clearly be "what does our game need to know behind the scenes?" Our game needs to know what values are behind each tile, how to spawn a "2" tile of a "4" tile in a random location, and how to collapse the board. In our game, we will represent the values behind each tile as the power of 2 of each tile, meaning a tile displayed as 8 has a backend value of 3 (2^3 = 8), and store these values in an array of length 16. We use Int.random to spawn either a 2 or a 4 tile in a random location, and we create functions which collapse the board left, right, up, or down.
 
 <div style="max-height: 425px !important; overflow-y: auto !important;">
 {% highlight swift %}
@@ -343,11 +343,6 @@ class game2048 {
         spawn()
     }
     
-    func getState() -> [Int] {
-        return nodes
-    }
-    
-    /* Spawns a 2 tile on the board in a random location */
     private func spawn() {
         var rand = Int.random(in: 0..<16)
             
@@ -355,11 +350,15 @@ class game2048 {
             rand = Int.random(in: 0..<16)
         }
             
-        nodes[rand] = 1
+        nodes[rand] = twoOrFour()
         delegate?.updateGrid(grid: nodes)
     }
+
+    private func twoOrFour() -> Int {
+        return Int.random(in: 0..<2)
+    }
     
-    func collaspeOnButtonClick(arrowIndex: Int?) {
+    func collaspeInDirection(arrowIndex: Int?) {
         if let dir = arrowIndex {
             assert(dir >= 0 && dir < 4, "Invalid Collaspe Board Direction")
             if dir == 0 { left() }

@@ -97,7 +97,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     <p> The example above shows our grid constraints. Using these constraints, we are able to tell Swift where to position our grid at what height and what width. We tell swift to attach our grid's leading, top, and right anchors to the leading, top, and right anchors of our device's screen. Using this information, we are able to determine our grid's width. Knowing the width of our grid, we can determine our grid's height by setting an Aspect Ratio constraint with a ratio of 1:1, telling Swift we want our width to equal our height. Knowing where to anchor our grid, and what it's dimensions are, Swift is able to determine where to place our grid on our device. </p>
 </div>
 
-<div class="breaker"></div>
+<br>
 
 {: style="text-align:center"}
 ![Markdowm Image][12]

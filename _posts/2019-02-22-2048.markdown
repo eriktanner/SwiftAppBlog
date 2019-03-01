@@ -141,7 +141,7 @@ class GridView : UIView {
     </div>
 
     <div class="toright" style="padding-top: 12px;">
-        <p> To control the board, we create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButtons contain a centered UIImageView composed of an imported asset, an arrow image. Each ArrowButton is uniquely identified in the ViewController class, which is used to determine the direction in which the button collaspes the board</p>
+        <p> To control the board, we create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButtons contain a centered UIImageView composed of an imported arrow image. Each ArrowButton is uniquely identified in the ViewController class, which is used to determine the direction in which the button collaspes the board</p>
     </div>
 </div>
 

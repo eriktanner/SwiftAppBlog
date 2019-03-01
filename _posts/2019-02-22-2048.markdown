@@ -510,8 +510,15 @@ extension Array {
 {% endhighlight %}
 </div>
 
-#### Delegates?
+#### *Delegates?...*
 
+## Communication is Key
+
+When we talked about the view controller, we explained how it acts as the gateway between the communication of our two entities, our view and our model. When we created our view controller, we could see that our view controller holds references to both our view and our model, and so our view controller is unlimited in its communication to them. Our model, however, has no idea where it came from, it has no idea who created it. To establish this connection of communication from our model to our view controller, we use **delegates**. 
+
+### Delegates
+
+Delegates 
 
 
 

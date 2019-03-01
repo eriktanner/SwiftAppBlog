@@ -259,12 +259,12 @@ extension UIView {
 
 ## Controllers
 
-Controllers handle the flow of data between entities. A controller transforms the output of one entity into the input that another entity can understand, much like your interaction with your remote or your keyboard. In Swift, the most common controller is a view controller. The view controller connects the the user interaction side of the application, the view, to the logic side of the application, the model. We use it to translate communication between these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
+Controllers handle the flow of data between entities. A controller transforms the output of one entity into the input that another entity can understand, much like your interaction with your remote or your keyboard. In Swift, the most common controller is a view controller. The view controller connects the user interaction side of the application, the view, to the logic side of the application, the model. We use it to translate communication between these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
 
 
 ### View Controller
 
-Every storyboard is connected to a UIViewController. Using option click and drag, we are able to create @IBOutlets, connecting views from each storyboard to their view controller. Here we set up references for views which we may choose to edit programatically, or for views which have impact on the logic of our game. In this example, we create our model object, game, whose logic is affected when the board is collasped. We collaspe the board once an arrow button registers a touch event, seen in the @IBAction, arrowClicked, which is connected to the four arrow buttons via the storyboard. 
+Every storyboard is connected to a UIViewController. Using option click and drag, we are able to create @IBOutlets, connecting views from each storyboard to their view controller. Here we set up references for views which we may choose to edit programatically, or for views which have impact on the logic of our game. In this example, we create our model object, game, whose logic is affected when the board is collasped. We collaspe the board once an arrow button registers a touchUpInside event, seen in the @IBAction, arrowClicked, which is connected to the four arrow buttons via the storyboard. 
 
 <div style="max-height: 325px !important; overflow-y: auto !important;">
 {% highlight swift %}
@@ -274,7 +274,6 @@ class ViewController: UIViewController {
     @IBOutlet private weak var grid: UIStackView!
     
     @IBOutlet private var arrowButtons: [ArrowButton]!
-    @IBOutlet private weak var repeatSwitch: UISwitch!
     @IBOutlet private weak var bNewGame: UIButton!
     
     private var gridViews = [GridView]()
@@ -284,7 +283,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.backgroundColor = MyColors.background
-        repeatSwitch.isOn = false
         for case let horizontalStackView as UIStackView in grid.arrangedSubviews {
             for case let gridView as GridView in horizontalStackView.arrangedSubviews {
                 gridViews.append(gridView)
@@ -298,7 +296,7 @@ class ViewController: UIViewController {
     }
     
     private func newGame() {
-        game = game2048(delegate: self, repeatable: repeatSwitch.isOn)
+        game = game2048(delegate: self)
     }
     
     @IBAction private func arrowClicked(_ sender: ArrowButton) {
@@ -308,10 +306,114 @@ class ViewController: UIViewController {
 }
 {% endhighlight %}
 </div>
+<br>
 
 
+## Model
 
-### Model
+Controllers handle the flow of data between entities. A controller transforms the output of one entity into the input that another entity can understand, much like your interaction with your remote or your keyboard. In Swift, the most common controller is a view controller. The view controller connects the user interaction side of the application, the view, to the logic side of the application, the model. We use it to translate communication between these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
+
+
+### game2048
+
+Every storyboard is connected to a UIViewController. Using option click and drag, we are able to create @IBOutlets, connecting views from each storyboard to their view controller. Here we set up references for views which we may choose to edit programatically, or for views which have impact on the logic of our game. In this example, we create our model object, game, whose logic is affected when the board is collasped. We collaspe the board once an arrow button registers a touchUpInside event, seen in the @IBAction, arrowClicked, which is connected to the four arrow buttons via the storyboard. 
+
+<div style="max-height: 450px !important; overflow-y: auto !important;">
+{% highlight swift %}
+class game2048 {
+    
+    private(set) var nodes : [Int]! //(Math) Power of every Tile 
+    weak var delegate: game2048Delegate?
+    
+    init(delegate: game2048Delegate?, repeatable: Bool) {
+        self.delegate = delegate
+        nodes = [Int](repeating: 0, count: 16)
+        startGame()
+    }
+    
+    private func startGame() {
+        delegate?.initGrid()
+        spawn()
+        spawn()
+    }
+    
+    func getState() -> [Int] {
+        return nodes
+    }
+    
+    /* Spawns a 2 tile on the board in a random location */
+    private func spawn() {
+        var rand = Int.random(in: 0..<16)
+            
+        while(nodes[rand] != 0) {
+            rand = Int.random(in: 0..<16)
+        }
+            
+        nodes[rand] = 1
+        delegate?.updateGrid(grid: nodes)
+    }
+    
+    func collaspeOnButtonClick(arrowIndex: Int?) {
+        if let dir = arrowIndex {
+            assert(dir >= 0 && dir < 4, "Invalid Collaspe Board Direction")
+            if dir == 0 { left() }
+            else if dir == 1 { up() }
+            else if dir == 2 { down() }
+            else if dir == 3 { right() }
+        }
+    }
+    
+    private func left() {
+        if let collasped = Collapse.collaspeGrid(grid: nodes, rowLength: 4) {
+            nodes = collasped
+            delegate?.updateGrid(grid: nodes)
+            spawn()
+        }
+    }
+    
+    private func right() {
+        nodes.reverse1d2(size: 4)
+        let collasped = Collapse.collaspeGrid(grid: nodes, rowLength: 4)
+        if (collasped != nil) {
+            nodes = collasped
+        }
+        nodes.reverse1d2(size: 4)
+        delegate?.updateGrid(grid: nodes)
+        if (collasped != nil) {
+            spawn()
+        }
+    }
+    
+    private func up() {
+        nodes.transpose1d2(size: 4)
+        let collasped = Collapse.collaspeGrid(grid: nodes, rowLength: 4)
+        if (collasped != nil) {
+            nodes = collasped
+        }
+        nodes.transpose1d2(size: 4)
+        delegate?.updateGrid(grid: nodes)
+        if (collasped != nil) {
+            spawn()
+        }
+    }
+    
+    private func down() {
+        nodes.transpose1d2(size: 4)
+        nodes.reverse1d2(size: 4)
+        let collasped = Collapse.collaspeGrid(grid: nodes, rowLength: 4)
+        if (collasped != nil) {
+            nodes = collasped
+        }
+        nodes.reverse1d2(size: 4)
+        nodes.transpose1d2(size: 4)
+        delegate?.updateGrid(grid: nodes)
+        if (collasped != nil) {
+            spawn()
+        }
+    }
+}
+{% endhighlight %}
+</div>
 
 
 

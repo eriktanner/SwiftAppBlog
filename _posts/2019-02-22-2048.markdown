@@ -63,7 +63,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 {: style="text-align:center"}
 ![Markdowm Image][10]
 
-### Grid Button
+### Grid View
 
 <div class="side-by-side" style="margin-top: 0px; margin-bottom: 0px;">
     <div class="toleft" style="text-align:center">
@@ -71,13 +71,13 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     </div>
 
     <div class="toright" style="padding-top: 12px;">
-        <p> To fill out the grid, I decided to create a custom type, GridButton, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridButton is a UIView with a Label centered, and functions which calculate it's backend value and update its display when the board is collasped.</p>
+        <p> To fill out the grid, I decided to create a custom type, GridView, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridButton is a UIView with a Label centered and a function which updates its display when the board is collasped.</p>
     </div>
 </div>
 
 <div style="max-height: 325px !important; overflow-y: auto !important;">
 {% highlight swift %}
-class GridButton : UIView {
+class GridView : UIView {
     
     var label : UILabel!
     
@@ -93,21 +93,15 @@ class GridButton : UIView {
         addShadow(view: self)
         
         label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(label)
         label.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         label.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-    }
-    
-    func getValue() -> Int {
-        return Int(sqrt(Double(label.text ?? "") ?? 0))
     }
     
     func updateTile(val: Int) {
@@ -145,10 +139,7 @@ class GridButton : UIView {
 {% highlight swift %}
 class ArrowButton : UIButton {
     
-    weak var delegate: ArrowDelegate?
-    
     var arrowImage : UIImageView!
-    var direction : String?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -171,49 +162,58 @@ class ArrowButton : UIButton {
         arrowImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         arrowImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
-    
-    func setupArrow(arrowDelegate: ArrowDelegate, dir: String, button: ArrowButton) {
-        delegate = arrowDelegate
-        self.direction = dir
-        
-        switch (dir) {
-        case "left":
-            self.arrowImage.transform = self.transform.rotated(by: CGFloat(Double.pi))
-            break
-        case "up":
-            self.arrowImage.transform = self.transform.rotated(by: CGFloat(Double.pi * 3/2))
-            break
-        case "down":
-            self.arrowImage.transform = self.transform.rotated(by: CGFloat(Double.pi / 2))
-            break
-        default:
-            break
-        }
-        
-        button.addTarget(self, action: #selector(arrowClicked), for: .touchUpInside)
-    }
-    
-    @objc func arrowClicked(_ sender: ArrowButton) {
-        switch (self.direction) {
-        case "left":
-            delegate?.leftClick()
-            break
-        case "right":
-            delegate?.rightClick()
-            break
-        case "up":
-            delegate?.upClick()
-            break
-        case "down":
-            delegate?.downClick()
-            break
-        default:
-            break
-        }
-    }
+}
 {% endhighlight %}
 </div>
 <br>
+
+#### Rotating ArrowButtons
+
+<div class="side-by-side" style="margin-top: 0px; margin-bottom: 0px;">
+    <div class="toleft" style="text-align:center">
+        <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/IBInspectableRotation.png" alt="Alt Text">
+    </div>
+
+    <div class="toright" style="padding-top: 12px;">
+        <p> To orient the arrows left, up, down, right, I decided to create an extension of UIView and create a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow you to add functionality to existing classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's User Interface Library, UIView. This means the rotation method can now be applied to any UIView or any of its subtypes, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the StoryBoard.</p>
+    </div>
+</div>
+
+<div style="max-height: 325px !important; overflow-y: auto !important;">
+{% highlight swift %}
+extension UIView {
+    
+    @IBInspectable
+    var rotation: CGFloat {
+        get {
+            return CGFloat(-1)
+        }
+        set {
+            switch (newValue) {
+            case 90:
+                self.transform = self.transform.rotated(by: CGFloat(Double.pi / 2))
+                break
+            case 180:
+                self.transform = self.transform.rotated(by: CGFloat(Double.pi))
+                break
+            case 270:
+                self.transform = self.transform.rotated(by: CGFloat(Double.pi * 3/2))
+                break
+            default:
+                break
+            }
+        }
+    }
+}
+
+{% endhighlight %}
+</div>
+<br>
+
+
+### Model
+
+
 
 
 <div class="side-by-side">

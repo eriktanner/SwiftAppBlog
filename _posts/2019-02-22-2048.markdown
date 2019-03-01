@@ -423,9 +423,91 @@ class game2048 {
 </div>
 
 
-#### Wheres the logic?
+#### What's this other stuff?
 
-The logic that makes 2048 2048 is found within another class, Collapse, and the Array extensions reverse1d2 and transpose1d2. Within collapse, we are able to take 1-demensional arrays and collapse them, meaning like values within a row or column are combined if adjacent blocks are of equal value. The reverse1d and transpose1d2 extensions allow us to shift around the boards values so that they may be used within the same collapse method to produce the desired result.
+
+And where's the number crunching? You may have noticed that our left, right, up, and down functions are calling functions not visible in our game2048 class. Our number crunching functionality was broken off from our game2048 and put into a class, Collapse, and in an extension of the Array class. This helps to keep or classes small, improving the readability, management, and usability of our code.
+Within collapse, we are able to take 1-demensional arrays and collapse them, meaning like values within a row or column are combined if adjacent blocks are of equal value. The reverse1d and transpose1d2 extensions allow us to shift around the boards values so that they may be used within the same collapse method to produce the desired result.
+
+<div style="max-height: 400px !important; overflow-y: auto !important;">
+{% highlight swift %}
+class Collapse {
+    
+    /* Collapses an array towards the 0 index, combining adjacent like values once*/
+    static func collapse(arr: [Int]) -> [Int] {
+        
+        var collasped = arr.filter{$0 != 0}
+        
+        for i in 0..<collasped.count {
+            
+            if (i < collasped.count - 1) {
+                if collasped[i] == collasped[i+1] {
+                    collasped[i] = collasped[i] + 1
+                    collasped[i+1] = 0
+                    collasped = collasped.filter{$0 != 0}
+                }
+            }
+        }
+        let diff = arr.count - collasped.count
+        for _ in 0..<diff {
+            collasped.append(0)
+        }
+        
+        return collasped
+    }
+    
+    static func collaspeGrid(grid: [Int], rowLength: Int) -> [Int]? {
+        assert(rowLength * rowLength == grid.count)
+        var indexStart = 0
+        var postCollaspe = [Int]()
+        
+        for _ in 0..<rowLength {
+            postCollaspe += collapse(arr: Array(grid[indexStart..<indexStart + rowLength]))
+            indexStart += rowLength
+        }
+
+        return grid == postCollaspe ? nil : postCollaspe
+    }
+}
+
+extension Array {
+    
+    /*Reverses each subset of the array of length size(parameter) in place*/
+    mutating func reverse1d2(size: Int) {
+        assert(size * size == self.count)
+        var start = 0
+        var end = size
+        
+        for _ in 0..<size {
+            let reversedRange = self[start..<end].reversed()
+            self.replaceSubrange(start..<end, with: reversedRange)
+            start = end
+            end = end + size
+        }
+    }
+    
+    /*Does a matrix transpose on a 1d array as if it were a 2d array
+     with rows and columns of length size*/
+    mutating func transpose1d2(size: Int) {
+        assert(size * size == self.count)
+        var transposedArr = [Element]()
+        
+        for firstElementOfNewRow in 0..<size {
+            var newRow = [Element]()
+            
+            for multiplier in 0..<size {
+                newRow.append(self[firstElementOfNewRow + size * multiplier])
+            }
+            
+            transposedArr += newRow
+        }
+        
+        self = transposedArr
+    }
+}
+
+{% endhighlight %}
+</div>
 
 #### Delegates?
 

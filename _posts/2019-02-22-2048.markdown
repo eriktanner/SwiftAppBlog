@@ -174,7 +174,7 @@ class GridView : UIView {
 ### Arrow Button
 
 <div class="side-by-side" style="margin-top: 0px; margin-bottom: 0px;">
-    <div class="toleft" style="text-align:center">
+    <div class="toleft" style="margin-top: 8px; text-align:center">
         <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/white2048arrow.png" alt="Alt Text">
     </div>
 
@@ -257,7 +257,13 @@ extension UIView {
 </div>
 <br>
 
-### View Controller
+### Controllers
+
+<div>
+    <p> Controllers handle the flow of data between two entities. In Swift, the most common controller is a view controller. The view controller connects the logic side of the application, the model, to the user interaction side of the application, the view. It is the binder of these two entities, in a common architectural pattern known as MVC, Model-View-Controller. </p>
+</div>
+
+
 
 
 ### Model

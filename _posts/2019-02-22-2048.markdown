@@ -259,13 +259,12 @@ extension UIView {
 
 ## Controllers
 
-<div style="margin-top: 0px;">
-    <p>Controllers handle the flow of data between two entities. In Swift, the most common controller is a view controller. The view controller connects the logic side of the application, the model, to the user interaction side of the application, the view. We use it to bind these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].</p>
-</div>
+Controllers handle the flow of data between two entities. In Swift, the most common controller is a view controller. The view controller connects the logic side of the application, the model, to the user interaction side of the application, the view. We use it to bind these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
+
 
 ### View Controller
 
-Every storyboard is connected to a UIViewController. Using option click and drag, we are able to create @IBOutlets, connecting views from each storyboard to their view controller. Here we set up references for views which we may choose to edit programatically, or for views which have impact the logic of our game. In this example, we create our model object, game, whose logic is affected when the board is collasped. We collaspe the board once an arrow button registers a touch event, seen in the @IBAction, arrowClicked, which is connected to the four arrow buttons via the storyboard. 
+Every storyboard is connected to a UIViewController. Using option click and drag, we are able to create @IBOutlets, connecting views from each storyboard to their view controller. Here we set up references for views which we may choose to edit programatically, or for views which have impact on the logic of our game. In this example, we create our model object, game, whose logic is affected when the board is collasped. We collaspe the board once an arrow button registers a touch event, seen in the @IBAction, arrowClicked, which is connected to the four arrow buttons via the storyboard. 
 
 <div style="max-height: 325px !important; overflow-y: auto !important;">
 {% highlight swift %}

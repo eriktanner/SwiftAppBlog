@@ -263,7 +263,7 @@ extension UIView {
 
 ## Controllers
 
-Controllers handle the flow of data between entities. A controller transforms the output of one entity into the input that another entity can understand, much like your interaction with your remote or your keyboard. In Swift, the most common controller is a view controller. The view controller connects the user interaction side of the application, the view, to the logic side of the application, the model. We use it to translate communication between these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
+Controllers handle the flow of data between entities. A controller transforms the output of one entity into the input that another entity can understand, much like your interaction with your remote, keyboard. or, if you could guess, your controller. In Swift, the most common controller is a view controller. The view controller connects the user interaction side of the application, the view, to the logic side of the application, the model. We use it to translate communication between these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
 
 
 ### View Controller

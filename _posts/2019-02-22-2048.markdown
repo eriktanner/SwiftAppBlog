@@ -256,7 +256,6 @@ extension UIView {
 </div>
 
 ---
-<br>
 
 {: style="text-align:center"}
 ![Markdowm Image][14]

@@ -175,7 +175,7 @@ class ArrowButton : UIButton {
     </div>
 
     <div class="toright" style="padding-top: 12px;">
-        <p> To orient the arrows left, up, down, right, I decided to create an extension of UIView and create a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow you to add functionality to existing classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's User Interface Library, UIView. This means the rotation method can now be applied to any UIView or any of its subtypes, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the StoryBoard.</p>
+        <p> To orient the arrows left, up, down, right, I decided to create an extension of UIView and create a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow you to add functionality to existing classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's user interface library, UIView. This means the rotation method can now be applied to any UIView or any of its subtypes, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the StoryBoard.</p>
     </div>
 </div>
 

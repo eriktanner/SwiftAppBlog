@@ -214,7 +214,7 @@ class ArrowButton : UIButton {
 {% endhighlight %}
 </div>
 
-#### Rotating ArrowButtons
+#### Rotating Arrow Buttons
 
 <div class="side-by-side" style="margin-top: 5px; margin-bottom: 0px;">
     <div class="toleft" style="margin-top: 23px; text-align:right;">

@@ -426,14 +426,15 @@ class game2048 {
 #### What's this other stuff?
 
 
-And where's the number crunching? You may have noticed that our left, right, up, and down functions are calling functions not visible in our game2048 class. Our number crunching functionality was broken off from our game2048 and put into a class, Collapse, and in an extension of the Array class. This helps to keep or classes small, improving the readability, management, and usability of our code.
-Within collapse, we are able to take 1-demensional arrays and collapse them, meaning like values within a row or column are combined if adjacent blocks are of equal value. The reverse1d and transpose1d2 extensions allow us to shift around the boards values so that they may be used within the same collapse method to produce the desired result.
+And where's the number crunching? You may have noticed that our left, right, up, and down functions are calling functions not visible in our game2048 class. Our number crunching functionality was broken off from our game2048 and put into a class, Collapse, and in an extension of the Array class. This helps to keep our classes small, improving the readability, management, and usability of our code.
+Within Collapse, we are able to take 1-demensional arrays and collapse them, meaning like values within the array are combined if adjacent indices are of equal value. The reverse1d and transpose1d2 extensions allow us to shift around the boards values so that they may be used within the same collapse method to produce the desired result.
 
 <div style="max-height: 400px !important; overflow-y: auto !important;">
 {% highlight swift %}
 class Collapse {
     
-    /* Collapses an array towards the 0 index, combining adjacent like values once*/
+    /* Removes zeros, does one time combining of consecutive equal values (pairs)
+     so that the pair now equal a single value of the shared value + 1,
     static func collapse(arr: [Int]) -> [Int] {
         
         var collasped = arr.filter{$0 != 0}

@@ -69,7 +69,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 ## Storyboard
 
 <div style="margin-bottom: 0px;">
-    <p> Storyboards are tools which developers can use to visually map out their user interface design. Developers can drag a drop objects from the object library and place them on screen and in a heirarchy, organizing their construction. In this example, we use our storyboard to layout the foundation of what or app will look like visually and to initialize our relationships between objects. Shown below is our grid, which is composed of a vertical stack-view, containing 4 equally spaced horizontal stack-views, each filled with 4 Grid Views. </p>
+    <p> Storyboards are tools which developers can use to visually map out their user interface design. Developers can drag a drop objects from the object library and place them on screen and in a heirarchy, organizing their construction. In this example, we use our storyboard to layout the foundation of what or app will look like visually and to initialize our relationships between objects. Shown below is our grid, which is composed of a vertical stack-view, containing four equally spaced horizontal stack-views, each filled with four Grid Views. </p>
 </div>
 
 {: style="text-align:center"}

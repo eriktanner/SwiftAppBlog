@@ -263,6 +263,52 @@ extension UIView {
     <p> Controllers handle the flow of data between two entities. In Swift, the most common controller is a view controller. The view controller connects the logic side of the application, the model, to the user interaction side of the application, the view. It is the binder of these two entities, in a common architectural pattern known as MVC, Model-View-Controller. </p>
 </div>
 
+## View Controller
+
+Every storyboard is connected to a UIViewController. Using option click and drag, we are able to create @IBOutlets, connecting views from each storyboard to their view controllers. Here we set up references for views which we may choose to edit programatically, or for views which have impact the logic of our game. In this example, we create our model object, game, whose logic is affected when the board is collasped. To collaspe the board, we look for a touch event, seen in the @IBAction, arrowClicked, which is connected to the four arrow buttons via the storyboard. 
+
+<div style="max-height: 325px !important; overflow-y: auto !important;">
+{% highlight swift %}
+class ViewController: UIViewController {
+
+    @IBOutlet private weak var mainView: UIView!
+    @IBOutlet private weak var grid: UIStackView!
+    
+    @IBOutlet private var arrowButtons: [ArrowButton]!
+    @IBOutlet private weak var repeatSwitch: UISwitch!
+    @IBOutlet private weak var bNewGame: UIButton!
+    
+    private var gridViews = [GridView]()
+    private var game : game2048!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainView.backgroundColor = MyColors.background
+        repeatSwitch.isOn = false
+        for case let horizontalStackView as UIStackView in grid.arrangedSubviews {
+            for case let gridView as GridView in horizontalStackView.arrangedSubviews {
+                gridViews.append(gridView)
+            }
+        }
+        newGame()
+    }
+    
+    @IBAction private func newGameClicked() {
+        newGame()
+    }
+    
+    private func newGame() {
+        game = game2048(delegate: self, repeatable: repeatSwitch.isOn)
+    }
+    
+    @IBAction private func arrowClicked(_ sender: ArrowButton) {
+        let arrowIndex = arrowButtons.firstIndex(of: sender)
+        game.collaspeOnButtonClick(arrowIndex: arrowIndex)
+    }
+}
+{% endhighlight %}
+</div>
 
 
 

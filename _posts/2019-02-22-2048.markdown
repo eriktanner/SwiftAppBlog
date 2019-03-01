@@ -262,7 +262,7 @@ extension UIView {
 
 ## Controllers
 
-Controllers handle the flow of data between entities. A controller transforms the input of one entity into the input that another entity can understand, much like your interaction with your remote, keyboard. or, you guessed it, your controller. In Swift, the most common controller is a view controller. The view controller connects the user interaction side of the application, the view, to the logic side of the application, the model. We use it to translate communication between these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
+Controllers handle the flow of data between entities. A controller transforms the input of one entity into the input that another entity can understand, much like your interaction with your remote, keyboard, or, you guessed it, your controller. In Swift, the most common controller is a view controller. The view controller connects the user interaction side of the application, the view, to the logic side of the application, the model. We use it to translate communication between these two entities, in a common architectural pattern known as MVC, [Model-View-Controller][13].
 
 
 ### View Controller
@@ -429,9 +429,10 @@ Within Collapse, we are able to take 1-demensional arrays and collapse them, mea
 {% highlight swift %}
 class Collapse {
     
-    /* Removes zeros, does one time combining of consecutive equal values (pairs)
-     so that the pair now equal a single value of the shared value + 1,
-     adds zeros to the end of the new arr so that its size equals the original size */
+    /* Removes zeros, does one time combining of consecutive equal values
+     (pairs) so that the pair now equal a single value of the shared 
+     value + 1, adds zeros to the end of the new arr so that its size 
+     equals the original size */
     static func collapse(arr: [Int]) -> [Int] {
         
         var collasped = arr.filter{$0 != 0}
@@ -509,6 +510,9 @@ extension Array {
 
 *Delegates?...*
 
+{: style="text-align:center"}
+![Markdowm Image][16]
+
 #### Communication is Key
 
 When we talked about the view controller, we explained how it acts as the gateway between the communication of our two entities, our view and our model. When we created our view controller, we could see that our view controller holds references to both our view and our model, and so our view controller is unlimited in its communication to them. Our model, however, has no idea where it came from, it has no idea who created it. To establish this connection of communication from our model to our view controller, we use the design pattern called **delegation**. 
@@ -535,5 +539,6 @@ Delegates
 [13]: https://www.raywenderlich.com/1073-model-view-controller-mvc-in-ios-a-modern-approach
 [14]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/blueController.png
 [15]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/logicGate.png
+[16]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/signal.png
 
 

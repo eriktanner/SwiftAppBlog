@@ -89,7 +89,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     </div>
 
     <div class="toright" style="margin-bottom: 0px; padding-bottom: 0px">
-        <p> In order for Swift to be able to confidently position an object on screen, across all devices, it must know its height, width, and position. Swift knows where to place an object based on relationships, named constraints, originating from known anchor points and properties of each individual device. The anchor points include the leading, top, bottom, and trailing anchors, which are the edges of the screen. The properties include the height, width, vertical center, and horizontal center of the device. Although constraints originate from properties of the screen, subsequential constraints can be define based on other constraint-defined objects. </p>
+        <p> In order for Swift to be able to confidently position an object on screen, across all devices, it must know its height, width, and position. Swift knows where to place an object based on relationships, named constraints, originating from known anchor points and properties of each individual device. The anchor points include the leading, top, bottom, and trailing anchors, which are the edges of the screen. The properties include the height, width, vertical center, and horizontal center of the device. Although constraints originate from properties of the screen, subsequential constraints can be define based on the properties of other objects. </p>
     </div>
 </div>
 
@@ -213,7 +213,6 @@ class ArrowButton : UIButton {
 }
 {% endhighlight %}
 </div>
-<br>
 
 #### Rotating ArrowButtons
 

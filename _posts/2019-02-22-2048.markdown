@@ -69,7 +69,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 ## Storyboard
 
 <div style="margin-bottom: 0px;">
-    <p> Storyboards are tools which developers can use to visually map out their user interface design. Developers can drag a drop objects from the object library and place them on screen and in a heirarchy, organizing their construction. In this example, we use our storyboard to layout the foundation of what or app will look like visually and to initialize our relationships between objects. Shown below is our grid, which is composed of a vertical stack-view, containing four equally spaced horizontal stack-views, each filled with four Views. </p>
+    <p> Storyboards are tools which developers can use to visually map out their user interface design. Developers can drag a drop objects from the object library and place them on screen and in a heirarchy, organizing their construction. In this example, we use our storyboard to layout the foundation of what or app will look like visually and to initialize our relationships between objects. Shown below is our grid, which is composed of a vertical stack-view, containing four equally spaced horizontal stack-views, each filled with four views. </p>
 </div>
 
 {: style="text-align:center"}
@@ -89,7 +89,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     </div>
 
     <div class="toright" style="padding-top: 12px;">
-        <p> To fill out the grid, we create a custom type, GridView, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridButton is a UIView with a Label centered and a function which updates its display when the board is collasped.</p>
+        <p> In order for Swift to be able to confidently position objects on screen, across all devices, it must know its height, width, and its position. Constraits tell Swift where to place objects based on relationships, originating from known anchor points and properties of each individual device. These anchor points include the leading, top, bottom, and trailing anchors, corresponding to the edges of the screen. These properties include the height, width, vertical center, and horizontal center of the device. Although constraints originate from properties of the screen, subsequential constraints can be define based on other constraint-defined objects. </p>
     </div>
 </div>
 <br>

@@ -84,11 +84,11 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 </div>
 
 <div class="side-by-side" style="margin-bottom: 0px; margin-top: 0px">
-    <div class="toleft" style="text-align:right">
+    <div class="toleft" style="text-align:right; margin-top: 5px; margin-bottom: 0px;">
         <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/gridViewConstraints.png" alt="Alt Text">
     </div>
 
-    <div class="toright">
+    <div class="toright" style="margin-bottom: 0px;">
         <p> In order for Swift to be able to confidently position objects on screen, across all devices, it must know its height, width, and its position. Constraits tell Swift where to place objects based on relationships, originating from known anchor points and properties of each individual device. These anchor points include the leading, top, bottom, and trailing anchors, corresponding to the edges of the screen. These properties include the height, width, vertical center, and horizontal center of the device. Although constraints originate from properties of the screen, subsequential constraints can be define based on other constraint-defined objects. </p>
     </div>
 </div>

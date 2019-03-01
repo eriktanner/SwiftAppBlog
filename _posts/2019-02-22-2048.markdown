@@ -66,10 +66,37 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 {: style="text-align:center"}
 ![Markdowm Image][10]
 
+## Storyboard
+
+{: style="text-align:center"}
+![Markdowm Image][11]
+
+<div style="margin-bottom: 0px;">
+    <p> Storyboards are tools which developers can use to visually map out their user interface design. Developers can drag a drop objects from the object library and place them on screen and in a heirarchy, organizing their construction. In this example, we use our storyboard to layout the foundation of what or app will look like visually and to initialize our relationships between objects.</p>
+</div>
+<br>
+
+### Constraints
+
+<div style="margin-bottom: 0px;">
+    <p> Constraints are essential to any well designed UI. With the multplicities of screen sizes ranging from iPads to iPhones, positioning objects on screen is not as simple as drag and drop. In other words, a well designed UI on an iPhone X has no guarantee of being well designed on a iPhone 6. What may be perfectly positioned object on an iPhone X, may be cutoff object on an iPhone 6. </p>
+</div>
+
+<div class="side-by-side" style="margin-top: 8px; margin-bottom: 0px;">
+    <div class="toleft" style="text-align:center">
+        <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/gridViewConstraints.png" alt="Alt Text">
+    </div>
+
+    <div class="toright" style="padding-top: 12px;">
+        <p> To fill out the grid, we create a custom type, GridView, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridButton is a UIView with a Label centered and a function which updates its display when the board is collasped.</p>
+    </div>
+</div>
+<br>
+
 ## Views
 
 <div style="margin-bottom: 0px;">
-    <p> Views are visual building blocks of an app's user interface. They can be draw and organize the content of a user's screen, making them essential for any and every developer. They can also animate and respond to touch events, some of which will be described later in this article. </p>
+    <p> Views are visual building blocks of an app's user interface. They draw and organize the content of a user's screen, making them essential for any and every developer. They can also animate and respond to touch events, some of which will be described later in this article. </p>
 </div>
 <br>
 
@@ -364,4 +391,6 @@ Do you want some videos? Youtube, Vimeo or Vevo? Copy the embed code and paste o
 [8]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/spec2048.jpg
 [9]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/my2048.png
 [10]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/my2048sim.png
+[11]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/gridViewStoryboard.png
+
 

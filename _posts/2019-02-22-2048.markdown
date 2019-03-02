@@ -87,7 +87,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 </div>
 
 <div style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px">
-    <p> The example above shows our grid constraints. Using these constraints, we are able to tell Swift where to position our grid at what height and what width. We tell swift to attach our grid's leading, top, and right anchors to the leading, top, and right anchors of our device's screen and to add 20 pixels of padding. Using this information, Swift is able to determine our grid's width. Knowing the width of our grid, we can determine our grid's height by setting an Aspect Ratio constraint with a ratio of 1:1, telling Swift we want our height to be equal to our width. Knowing where to anchor our grid, and what it's dimensions are, Swift is able to determine where to place our grid on our device and at what size. </p>
+    <p> The example above shows our grid constraints. Using these constraints, we are able to tell Swift where to position our grid at what height and what width. We tell swift to attach our grid's leading, top, and right anchors to the leading, top, and right anchors of our device's screen and to add 20 pixels of padding. Using this information, Swift is able to determine our grid's width. Knowing the width of our grid, we can determine our grid's height by setting an Aspect Ratio constraint with a ratio of 1:1, telling Swift we want our height to be equal to our width. Knowing where to anchor our grid, and what its dimensions are, Swift is able to determine where to place our grid on our device and at what size. </p>
 </div>
 
 ---
@@ -100,7 +100,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 ## Views
 
 <div>
-    <p> Views are visual building blocks of an app's user interface. They draw and organize the content of a user's screen, making them essential for any and every developer. They can also animate and respond to touch events, some of which will be described later in this article. </p>
+    <p> Views are visual the building blocks of an app's user interface. They draw and organize the content of a user's screen, making them essential for any and every developer. They can also animate and respond to touch events, some of which will be described later in this article. </p>
 </div>
 <br>
 
@@ -112,7 +112,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
     </div>
 
     <div class="toright" style="padding-top: 12px;">
-        <p> To fill out the grid, we create a custom type, GridView, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridButton is a UIView with a Label centered and a function which updates its display when the board is collasped.</p>
+        <p> To fill out the grid, we create a custom type, GridView, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridView is a UIView with a Label centered and a function which updates its display when the board is collasped.</p>
     </div>
 </div>
 
@@ -172,7 +172,7 @@ class GridView : UIView {
     </div>
 
     <div class="toright" style="padding-top: 5px;">
-        <p> To control the board, we create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButtons contain a centered UIImageView composed of an imported arrow image. Each ArrowButton is uniquely identified in the ViewController class, which is used to determine the direction in which the button collaspes the board</p>
+        <p> To control the board, we create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButtons contain a centered UIImageView composed of an imported arrow image. Each ArrowButton is uniquely identified in the ViewController class, which is used to determine the direction in which the button collaspes the board. </p>
     </div>
 </div>
 
@@ -245,7 +245,7 @@ extension UIView {
 </div>
 
 <div style="margin-top: 10px;">
-    <p> To orient the arrows left, up, down, right, we create an extension of UIView and define a rotation method with the tag @IBInspectable. Swift's extensions are very powerful in that they allow us to add functionality to already defined classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's user interface library, UIView. This means the rotation method can now be applied to any UIView or any of its subclasses, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the Interface Builder.</p>
+    <p> To orient the arrows left, up, down, right, we create an extension of UIView and define a rotation variable with the tag @IBInspectable. Swift's extensions are very powerful in that they allow us to add functionality to already defined classes, structs, enums, and protocols. In this example, we extend a class defined in Swift's user interface library, UIView. This means the rotation method can now be applied to any UIView or any of its subclasses, such as UIButton. The @IBInspectable tag pulls this method into XCode's Interface Builder, allowing us to apply rotation values to UIViews from the Interface Builder.</p>
 </div>
 
 ---
@@ -317,7 +317,7 @@ The model handles the logical backend of the application. This side of the appli
 
 ### game2048
 
-What goes in the model of our game? The question can more clearly be "what does our game need to know behind the scenes?" Our game needs to know what values are behind each tile, how to spawn a 2 tile or a 4 tile in a random location, and how to collapse the board. In our game, we will represent the values behind each tile as the power of 2 of each tile, meaning a tile displayed as 8 has a backend value of 3 (2^3 = 8), and store these values in an array of length 16. We use Int.random to spawn either a 2 or a 4 tile in a random location, and we create functions which collapse the board left, right, up, or down.
+What goes in the model of our game? The question can more clearly be asked as "what does our game need to know behind the scenes?" Our game needs to know what values are behind each tile, how to spawn a 2 or 4 tile in a random blank location, and how to collapse the board. In our game, we will represent the values behind each tile as the power of 2 of each tile, meaning a tile displayed as 8 has a backend value of 3 (2^3 = 8), and store these values in an array of length 16. We use Int.random to spawn either a 2 or 4 tile in a random location, and we create functions which collapse the board left, right, up, and down.
 
 <div style="max-height: 425px !important; overflow-y: auto !important;">
 {% highlight swift %}
@@ -418,7 +418,7 @@ class game2048 {
 
 
 And where's the number crunching? You may have noticed that our left, right, up, and down functions are calling functions not visible in our game2048 class. Our number crunching functionality was broken off from our game2048 and put into a class, Collapse, and in an extension of the Array class. This helps to keep our classes small, improving the readability, management, and usability of our code.
-Within Collapse, we are able to take 1-demensional arrays and collapse them, meaning like values within the array are combined if adjacent indices are of equal value. The reverse1d and transpose1d2 extensions allow us to shift around the boards values so that they may be used within the same collapse method to produce their desired result.
+Within Collapse, we are able to take 1-demensional arrays and collapse them, meaning like values within the array are combined if adjacent indices are of equal value. The reverse1d and transpose1d2 extensions allow us to shift around the boards values so that they may be used within the same collapse method to produce their desired results.
 
 <div style="max-height: 400px !important; overflow-y: auto !important;">
 {% highlight swift %}
@@ -549,7 +549,7 @@ extension ViewController: game2048Delegate {
 
 ## Conclusion
 
- Finally, a completed app. To summarize, we learned how the storyboard helps developers lay out the foundation of their apps and constraints allow applications to be viewed across all devices. Views govern the look and feel of an application, models act as the logical backend, and controllers act as the middle man between the two. Lastly, we learned how we can use delegates to establish a means of communicating between decoupled classes. And there it is, with this guide we have all the tools needed to create one of the most popular games to ever exist on Apple's App Store, 2048.
+ Finally, a completed app. To summarize, we learned how the storyboard helps developers lay out the foundation of their apps and constraints allow applications to be layed out across all devices. Views govern the look and feel of an application, models act as the logical backend, and controllers act as the middle man between the two. Lastly, we learned how we can use delegates to establish a means of communicating between decoupled classes. And there it is, with this guide we have all the tools needed to create one of the most popular games to ever exist on Apple's App Store, 2048.
 
 
 

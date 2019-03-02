@@ -515,7 +515,7 @@ Thoughout our game2048 class, you may have noticed calls to something called a d
 
 ### Delegation
 
-Delegates allow us to communicate from one object to another in a decoupled manner. Decoupled code is ideal for keeping our systems more independent, which makes our system as a whole more robust. Here we use delegates to communicate from our game2048 object, game, back to its owner, our view controller. Our game object does not know anything about our view controller, only that it adheres to a protocol, allowing us to set it as our game object's delegate. As our code runs in our game2048 class, it makes calls to its delegate; if the delegate is set, it runs the code defined by the delegate object. In our example, our game object code runs, makes calls to its delegate, finds that its set to our view controller, and runs the code defined by our view controller.
+Delegates allow us to communicate from one object to another in a decoupled manner. Decoupling, the practice of keeping entities independent, is ideal for keeping our system as a whole more robust. Here we use delegates to communicate from our game2048 object, game, back to its owner, our view controller. Our game object does not know anything about our view controller, only that it adheres to a protocol, allowing us to set it as our game object's delegate. As our code runs in our game2048 class, it makes calls to its delegate; if the delegate is set, it runs the code defined by the delegate object. In our example, our game object code runs, makes calls to its delegate, finds that its set to our view controller, and runs the code defined by our view controller.
 
 <div style="max-height: 250px !important; overflow-y: auto !important;">
 {% highlight swift %}

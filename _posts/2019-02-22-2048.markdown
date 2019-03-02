@@ -555,7 +555,7 @@ extension ViewController: game2048Delegate {
 
 ## Conclusion
 
-And there it is. With this guide we have all the tools needed to create one of the most popular games to ever exist on Apple's App Store, 2048. 
+ To summarize, we learned how the storyboard helps developers lay out the foundation of their apps and constraints allow applications to be multi-deviced. Views govern the look and feel of an application, models act as the logical backend, and controllers act as the middle man between the two. Lastly, we learned how we can use delegates to establish a means of communicating between decoupled classes. And there it is, with this guide we have all the tools needed to create one of the most popular games to ever exist on Apple's App Store, 2048.
 
 
 

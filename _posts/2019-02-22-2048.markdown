@@ -549,6 +549,7 @@ extension ViewController: game2048Delegate {
 </div>
 
 ---
+<br>
 
 {: style="text-align:center"}
 ![Markdowm Image][10]

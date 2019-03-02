@@ -548,18 +548,16 @@ extension ViewController: game2048Delegate {
 {% endhighlight %}
 </div>
 
+---
+
 {: style="text-align:center"}
 ![Markdowm Image][10]
 
+## Conclusion
+
+And there it is. With this guide we have all the tools needed to create one of the most popular games to ever exist on Apple's App Store, 2048. 
 
 
-
-[1]: http://daringfireball.net/projects/markdown/
-[2]: http://www.fileformat.info/info/unicode/char/2163/index.htm
-[3]: http://www.markitdown.net/
-[4]: http://daringfireball.net/projects/markdown/basics
-[5]: http://daringfireball.net/projects/markdown/syntax
-[6]: http://kune.fr/wp-content/uploads/2013/10/ghost-blog.jpg
 
 [7]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/official2048square.png
 [8]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/spec2048.jpg

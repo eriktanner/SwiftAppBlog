@@ -73,7 +73,7 @@ The first class project for CMSC436 was to recreate the popular mobile game 2048
 ### Constraints
 
 <div>
-    <p> Constraints are essential to any well designed UI. With the multiplicities of screen sizes ranging from iPads to iPhones, positioning objects on screen is not as simple as drag and drop. In other words, a well designed UI on an iPhone X has no guarantee of being well designed on a iPhone 6. What may be perfectly positioned on an iPhone X could be cutoff on an iPhone 6. </p>
+    <p> Constraints are essential to any well designed UI. With the multiplicities of screen sizes ranging from iPads to iPhones, positioning objects on screen is not as simple as drag and drop. In other words, a well designed UI on an iPhone X has no guarantee of being well designed on an iPhone 6. What may be perfectly positioned on an iPhone X could be cutoff on an iPhone 6. </p>
 </div>
 
 <div class="side-by-side" style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px">

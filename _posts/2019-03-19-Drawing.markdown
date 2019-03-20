@@ -31,12 +31,15 @@ Our goal for 2048 is to have animated tiles when the user collapses the board le
 
 ### Setting up the View
 
-{: style="text-align:center"}
-![Markdowm Image][8]
 
 <div>
     <p> First things first, we're going to have to create a view for us to work on. This will involve creating our view in our storyboard, and setting its constraints. In this example, our board is placed in a vertical stack view, an so its leading and trailing anchors will equal the leading and trailing anchors of its containing stack view. The constraints of both our board and its containing stack view are shown. A thing to note is the fact that 2 of the stack view's constraints are faded. These constraints are applied when the height of the phone is compact, for most phones this is when it is landscape mode. Another point is the "@250" and others, these are priority numbers. Priority number tell the compiler which constraints it is allowed to break, no @ symbol means the constraint is required, and lower priority numbers will be broken before higher priority numbers. </p>
 </div>
+
+{: style="text-align:center"}
+![Markdowm Image][8]
+
+<br>
 
 ### Creating the Class
 

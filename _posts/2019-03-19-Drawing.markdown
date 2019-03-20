@@ -16,24 +16,26 @@ description: Drawing in ios
 {: style="text-align:center"}
 ![Markdowm Image][7]
 
-
-## Introduction
-
-Our goal for 2048 is to have animated tiles when the user collapses the board left, right, etc. Before getting ahead of ourselves with dynamic animations, we're going to create a background to our game, a static board. In this article, we are going to draw the board of our 2048 game. 
-
----
-
 ## Drawing
 
 <div>
-    <p> In ios, we can add custom drawings on our views by using Apple's Core Graphic's API. Core Graphic's is a powerful vector drawing framework, and it comes in handy when dealing with the various phone sizes and pixel capabilities of phones. Instead of drawing multiple boards of various sizes in say Photoshop, we're going to draw our board through code using Core Graphic's capabiltiies, guaranteeing a quality board irrespective of the phone it is displayed on.  </p>
+    <p> In iOS, we can add custom drawings on our views by using Apple's Core Graphic's API. Core Graphic's is a powerful vector drawing framework, and it comes in handy when dealing with the various phone sizes and pixel capabilities of phones. Instead of drawing multiple boards of various sizes in say Photoshop, we're going to draw our board through code using Core Graphic's capabiltiies, guaranteeing a quality board irrespective of the phone it is displayed on.  </p>
 </div>
 
-### Constraints
+---
+
+## Background
+
+Our goal for 2048 is to have animated tiles when the user collapses the board left, right, etc. Before getting ahead of ourselves with dynamic animations, we're going to create a background to our game, a static board. In this article, we are going to draw the board of our 2048 game. 
+
+
+### Setting up the View
 
 <div>
-    <p> Constraints are essential to any well designed UI. With the multiplicities of screen sizes ranging from iPads to iPhones, positioning objects on screen is not as simple as drag and drop. In other words, a well designed UI on an iPhone X has no guarantee of being well designed on an iPhone 6. What may be perfectly positioned on an iPhone X could be cutoff on an iPhone 6. </p>
+    <p> First things first, we're going to have to create a view for us to work on. This will involve creating our view in our storyboard, and setting its constraints. In this example, our board is placed in a vertical stack view, an so its leading and trailing anchors will equal the leading and trailing anchors of its containing stack view. The constraints of both our board and its containing stack view are shown. A thing to note is the fact that 2 of the stack view's constraints are faded. These constraints are applied when the height of the phone is compact, for most phones this is when it is landscape mode. Another point is the "@250" and others, these are priority numbers. Priority number tell the compiler which constraints it is allowed to break, no @ symbol means the constraint is required, and lower priority numbers will be broken before higher priority numbers. </p>
 </div>
+
+### Creating the Class
 
 <div class="side-by-side" style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px">
     <div class="toleft" style="text-align:right; margin-top: 8px; margin-bottom: 0px;">
@@ -41,130 +43,37 @@ Our goal for 2048 is to have animated tiles when the user collapses the board le
     </div>
 
     <div class="toright" style="margin-bottom: 0px; padding-bottom: 0px">
-        <p> In order for Swift to be able to confidently position an object on screen, across all devices, it must know its height, width, and position. Swift knows where to place an object based on relationships, named constraints, originating from known anchor points and properties of each individual device. The anchor points include the leading, top, bottom, and trailing anchors, which are the edges of the screen. The properties include the height, width, vertical center, and horizontal center of the device. Although constraints originate from properties of the screen, subsequential constraints can be defined based on the properties of other objects. </p>
+        <p>  Next, we need to create our class, BoardView. We need to create a file, board.swift, and add a class BoardView, subclassing from UIView. Then we will go back to the view we want to represent as our board, as set its class as BoardView in the Identity Inspector. </p>
     </div>
 </div>
 
-<div style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px">
-    <p> The example above shows our grid constraints. Using these constraints, we are able to tell Swift where to position our grid at what height and what width. We tell swift to attach our grid's leading, top, and right anchors to the leading, top, and right anchors of our device's screen and to add 20 pixels of padding. Using this information, Swift is able to determine our grid's width. Knowing the width of our grid, we can determine our grid's height by setting an Aspect Ratio constraint with a ratio of 1:1, telling Swift we want our height to be equal to our width. Knowing where to anchor our grid, and what its dimensions are, Swift is able to determine where to place our grid on our device and at what size. </p>
-</div>
 
----
-<br>
-
-{: style="text-align:center"}
-![Markdowm Image][12]
-
-
-## Views
+## Overidding draw(rect: CGRect)
 
 <div>
-    <p> Views are visual the building blocks of an app's user interface. They draw and organize the content of a user's screen, making them essential for any and every developer. They can also animate and respond to touch events, some of which will be described later in this article. </p>
-</div>
-<br>
-
-### Grid View
-
-<div class="side-by-side" style="margin-top: 5px; margin-bottom: 0px;">
-    <div class="toleft" style="text-align:center">
-        <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/white2048button4.png" alt="Alt Text">
-    </div>
-
-    <div class="toright" style="padding-top: 12px;">
-        <p> To fill out the grid, we create a custom type, GridView, which derives from UIView, a type which manages the content of a rectangular area on screen and has properties such as background color. GridView is a UIView with a Label centered and a function which updates its display when the board is collasped.</p>
-    </div>
+    <p> When the compiler renders or rerenders views, it calls a function home to all UIViews, draw(rect: CGRect). CGRect represents a location and a size on screen, in our case, this CGRect will represent the location and size of our board, which is decided by the contraints given to our board in the storyboard. It is here where we add our code to handle our custom drawing for our BoardView. To draw we are going to use a class in the Core Graphic's API, UIBezierPath. UIBezierPath allows us to set locations and draw lines to these locations. It also has useful constructors for creating shapes, such as rectangles. We can then fill, if it's closed, and stroke these paths to draw our board.</p>
 </div>
 
-<div style="max-height: 325px !important; overflow-y: auto !important;">
-{% highlight swift %}
-class GridView : UIView {
-    
-    var label : UILabel!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.layer.borderWidth = 4
-        self.layer.cornerRadius = BUTTON_ROUNDNESS
-        self.layer.borderColor = MyColors.grayBorder.cgColor
-        addShadow(view: self)
-        
-        label = UILabel()
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(label)
-        label.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        label.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
-        label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-    }
-    
-    func updateTile(val: Int) {
-        if(val == 0) {
-            label.text = ""
-        } else {
-            label.text = String(2 << (val - 1))
-        }
-        
-        self.backgroundColor = MyColors.numToBackground[val]
-        if (val <= 2) {
-            label.textColor = MyColors.grayText
-        } else {
-            label.textColor = .white
-        }
-    }
-}
-{% endhighlight %}
-</div>
-<br>
+### Our draw(rect: CGRect) function
 
-### Arrow Button
-
-<div class="side-by-side" style="margin-top: 0px; margin-bottom: 0px;">
-    <div class="toleft" style="margin-top: 15px; text-align:center">
-        <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/white2048arrow.png" alt="Alt Text">
+<div class="side-by-side" style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px">
+    <div class="toleft" style="text-align:right; margin-top: 8px; margin-bottom: 0px;">
+        <img class="image" src="https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/gridViewConstraints.png" alt="Alt Text">
     </div>
 
-    <div class="toright" style="padding-top: 5px;">
-        <p> To control the board, we create a custom type, ArrowButton, which derives from UIButton, a type which registers touch events. ArrowButtons contain a centered UIImageView composed of an imported arrow image. Each ArrowButton is uniquely identified in the ViewController class, which is used to determine the direction in which the button collaspes the board. </p>
+    <div class="toright" style="margin-bottom: 0px; padding-bottom: 0px">
+        <p> Here we first set our fill and stroke colors. We then create a Bezier path, and rectanlge, and calculate the width we want our strokes to be, based on the width of the board. The width of our lines depending on whch device is running and its orientation. Lastly, we create our grid lines by creating another Bezier path, which has its points set and drawn from respective tertiary points of the board, and stroking its path. </p>
     </div>
 </div>
 
-<div style="max-height: 325px !important; overflow-y: auto !important;">
-{% highlight swift %}
-class ArrowButton : UIButton {
-    
-    var arrowImage : UIImageView!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.layer.cornerRadius = BUTTON_ROUNDNESS
-        self.backgroundColor = MyColors.grayBorder
-        addShadow(view: self)
-        
-        arrowImage = UIImageView()
-        arrowImage.image = UIImage(named: "keyboard-right-arrow-button")
-        arrowImage.alpha = 0.5
-        arrowImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(arrowImage)
-        arrowImage.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.6).isActive = true
-        arrowImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6).isActive = true
-        arrowImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        arrowImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-    }
-}
-{% endhighlight %}
+ ---
+
+## Conclusion
+
+<div>
+    <p> With that, we have just drawn our board using Core Graphics. This has granted us a more flexible UI, which adjusts to any screen size or orientation seemlessly, and a background for our tiles to move upon. </p>
 </div>
+
 
 #### Rotating Arrow Buttons
 
@@ -513,7 +422,7 @@ extension ViewController: game2048Delegate {
 
 
 [7]: https://eriktanner.github.io/SwiftAppBlog/assets/images/drawing/board.png
-[8]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/spec2048.jpg
+[8]: https://eriktanner.github.io/SwiftAppBlog/assets/images/drawing/story.png
 [9]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/my2048.png
 [10]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/my2048sim.png
 [11]: https://eriktanner.github.io/SwiftAppBlog/assets/images/2048/gridViewStoryBoard.png

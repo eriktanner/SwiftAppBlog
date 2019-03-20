@@ -1,5 +1,5 @@
 ---
-title: "Remaking 2048 - Foundation"
+title: "Remaking 2048"
 layout: post
 date: 2019-02-22 22:48
 image: /assets/images/2048/official2048square.png
@@ -21,33 +21,6 @@ description: Remake of popular game app, 2048
 ## Introduction
 
 The first class project for CMSC436 was to recreate the popular mobile game 2048, a game compared to the popular mobile game Flappy Bird for its virality. The game is played on a 4x4 grid with every turn resulting in a new 2 or 4 tile to be created on random blank tile. The game is played by collasping rows or columns of tiles together in a direction, combining like values. The goal is to reach the 2048 tile before the board fills up and can no longer be collasped.
-
----
-
-## Specification
-
-### View Details
-1. A vertical stack-view consiting of 4 horizontal stack-views
-2. 4 Arrow Buttons
-3. A New Game Button
-4. A Repeatable Switch
-
-### Model Details
-1. Create a class game2048 in the model class
-2. Represent the board as a one dimensional Int array
-
-#### Model Methods
-* left(), right(), up(), down(), which collaspe the board
-* getState() -> [Int]: returns current state of the array
-* spawn(): creates a new minimum value ('1', displayed as 2^1) in a random blank square. 
-
-<br>
-
-{: style="text-align:center"}
-![Markdowm Image][8]
-
-*Both the "Repeatable Switch" and "spawn()" were added/modified from the original 2048 game*
-
 
 ---
 
@@ -549,7 +522,7 @@ extension ViewController: game2048Delegate {
 
 ## Conclusion
 
- Finally, the foundation of our app. To summarize, we learned how the storyboard helps developers lay out the foundation of their apps and constraints allow applications to be layed out across all devices. Views govern the look and feel of an application, models act as the logical backend, and controllers act as the middle man between the two. Lastly, we learned how we can use delegates to establish a means of communicating between decoupled classes. And there it is, with this guide we have all the tools needed to create one of the most popular games to ever exist on Apple's App Store, 2048.
+ Finally, a completed app. To summarize, we learned how the storyboard helps developers lay out the foundation of their apps and constraints allow applications to be layed out across all devices. Views govern the look and feel of an application, models act as the logical backend, and controllers act as the middle man between the two. Lastly, we learned how we can use delegates to establish a means of communicating between decoupled classes. And there it is, with this guide we have all the tools needed to create one of the most popular games to ever exist on Apple's App Store, 2048.
 
 
 

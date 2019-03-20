@@ -54,6 +54,7 @@ Our goal for 2048 is to have animated tiles when the user collapses the board le
     </div>
 </div>
 
+---
 
 ## Overidding draw(rect: CGRect)
 

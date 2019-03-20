@@ -28,6 +28,7 @@ description: Drawing in ios
 
 Our goal for 2048 is to have animated tiles when the user collapses the board left, right, up, or down. Before getting ahead of ourselves with dynamic animations, we're going to create a background to our game, a static board. In this article, we are going to draw the board of our 2048 game. 
 
+<br>
 
 ### Setting up the View
 

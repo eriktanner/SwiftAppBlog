@@ -22,13 +22,13 @@ description: Drawing in ios
     <p> In iOS, we can add custom drawings on our views by using Apple's Core Graphic's API. Core Graphic's is a powerful vector drawing framework, and it comes in handy when dealing with the various phone sizes and pixel capabilities of phones. Instead of drawing multiple boards of various sizes in say Photoshop, we're going to draw our board through code using Core Graphic's capabiltiies, guaranteeing a quality board irrespective of the phone it is displayed on.  </p>
 </div>
 
----
+<br>
 
 ## Background
 
 Our goal for 2048 is to have animated tiles when the user collapses the board left, right, up, or down. Before getting ahead of ourselves with dynamic animations, we're going to create a background to our game, a static board. In this article, we are going to draw the board of our 2048 game. 
 
-<br>
+---
 
 ### Setting up the View
 

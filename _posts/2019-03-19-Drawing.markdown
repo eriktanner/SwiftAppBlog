@@ -63,7 +63,7 @@ Our goal for 2048 is to have animated tiles when the user collapses the board le
 ### Our draw(rect: CGRect) function
 
 <div class="side-by-side" style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0">
-    <div class="toleft" style="max-height: 250px !important; overflow-y: auto !important;">
+    <div class="toleft" style="max-height: 250px !important; overflow-y: auto !important; padding-bottom: 10">
 {% highlight swift %}
 override func draw(_ rect: CGRect) {
     MyColors.background0.setFill()

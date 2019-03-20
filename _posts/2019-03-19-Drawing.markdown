@@ -102,7 +102,7 @@ override func draw(_ rect: CGRect) {
 ## Conclusion
 
 <div>
-    <p> With that, we have just drawn our board using Core Graphics. This has granted us a more flexible UI, which adjusts to any screen size or orientation seemlessly, and a background for our tiles to move upon. </p>
+    <p> With that, we have just drawn our board using Core Graphics. This has granted us a more flexible UI, which adjusts to any screen size or orientation seemlessly, and will act as the background for our tiles to animate above moving forward. </p>
 </div>
 
 

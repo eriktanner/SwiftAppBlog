@@ -40,6 +40,7 @@ Our goal for 2048 is to have animated tiles when the user collapses the board le
 {: style="text-align:center"}
 ![Markdowm Image][8]
 
+<br>
 
 ### Creating the Class
 
